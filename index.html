@@ -1,0 +1,1390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Metamorphosis, Illustrated</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&amp;family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,700;1,7..72,400&amp;family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+<style>
+/* Layout: one paginated column, KOReader-style. Text flows through CSS columns that are
+   exactly one page wide; turning a page shifts the strip by one column. Chrome (footer,
+   buttons, dialogs) copies KOReader's native look: bordered, rounded, bold sans. */
+:root {
+  --paper: #fdfcfa;
+  --ink: #1c1a17;
+  --muted: #736d65;
+  --rule: #d7d1c7;
+  --accent: #a2660f;
+  --accent-ink: #ffffff;
+  --chrome: #ffffff;
+  --chrome-ink: #1c1a17;
+  --sel: rgba(28, 26, 23, .09);
+  --ground: rgba(162, 102, 15, .17);
+  --scan: rgba(162, 102, 15, .30);
+  --flash: rgba(162, 102, 15, .14);
+
+  --fig-bg: #f3f1ec;
+  --fig-ink: #2a2622;
+  --fig-muted: #6e675e;
+  --fig-w1: #e9e5dd;
+  --fig-w2: #d5cfc3;
+  --fig-w3: #5c554c;
+  --fig-face: #fffdf9;
+  --fig-floor: #ddd3c2;
+  --fig-wood: #b98d5f;
+  --fig-wood2: #c9a072;
+  --fig-linen: #f8f6f1;
+  --fig-shell: #3f2a1c;
+  --fig-belly: #9a6532;
+  --fig-blanket: #6f8297;
+  --fig-ochre: #c8902e;
+  --fig-ochre2: #e2b866;
+  --fig-fur: #6b513e;
+  --fig-sky: #a8b0b5;
+  --fig-fog: #c3c9cc;
+  --fig-rain: #56636c;
+  --fig-drop: #d9e0e3;
+  --fab1: #c8902e;
+  --fab2: #5b7088;
+  --fab3: #9b4f3c;
+  --fab4: #7d8b62;
+
+  --ui: "Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif;
+  --serif: "Literata", "Charis SIL", Georgia, serif;
+  --fs: 18px;
+  --mt: 22px;
+  --foot: 46px;
+}
+@media (min-width: 700px) {
+  :root { --serif: "Charis SIL", "Literata", Georgia, serif; --mt: 30px; --foot: 52px; }
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121110; --ink: #e7e2d9; --muted: #9c958b; --rule: #3a3631; --accent: #e3a94f; --accent-ink: #1b1306;
+    --chrome: #1b1a18; --chrome-ink: #e7e2d9; --sel: rgba(231, 226, 217, .12); --ground: rgba(227, 169, 79, .22);
+    --scan: rgba(227, 169, 79, .36); --flash: rgba(227, 169, 79, .16);
+    --fig-bg: #1c1b19; --fig-ink: #e2dcd1; --fig-muted: #a39b90; --fig-w1: #282622; --fig-w2: #3a362f; --fig-w3: #8d8579;
+    --fig-face: #2b2824; --fig-floor: #34302a; --fig-wood: #7c5e41; --fig-wood2: #8d6c4b; --fig-linen: #2f2c28;
+    --fig-shell: #20160f; --fig-belly: #a5713f; --fig-blanket: #4f6073; --fig-ochre: #d6a14a; --fig-ochre2: #9c7a3c;
+    --fig-fur: #8a6c55; --fig-sky: #3c4348; --fig-fog: #4a5257; --fig-rain: #a3b3bd; --fig-drop: #59646a;
+    --fab1: #c08a2f; --fab2: #5e7590; --fab3: #9a5442; --fab4: #7b8a60;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121110; --ink: #e7e2d9; --muted: #9c958b; --rule: #3a3631; --accent: #e3a94f; --accent-ink: #1b1306;
+  --chrome: #1b1a18; --chrome-ink: #e7e2d9; --sel: rgba(231, 226, 217, .12); --ground: rgba(227, 169, 79, .22);
+  --scan: rgba(227, 169, 79, .36); --flash: rgba(227, 169, 79, .16);
+  --fig-bg: #1c1b19; --fig-ink: #e2dcd1; --fig-muted: #a39b90; --fig-w1: #282622; --fig-w2: #3a362f; --fig-w3: #8d8579;
+  --fig-face: #2b2824; --fig-floor: #34302a; --fig-wood: #7c5e41; --fig-wood2: #8d6c4b; --fig-linen: #2f2c28;
+  --fig-shell: #20160f; --fig-belly: #a5713f; --fig-blanket: #4f6073; --fig-ochre: #d6a14a; --fig-ochre2: #9c7a3c;
+  --fig-fur: #8a6c55; --fig-sky: #3c4348; --fig-fog: #4a5257; --fig-rain: #a3b3bd; --fig-drop: #59646a;
+  --fab1: #c08a2f; --fab2: #5e7590; --fab3: #9a5442; --fab4: #7b8a60;
+  color-scheme: dark;
+}
+
+html, body { height: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); overflow: hidden; -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; }
+
+#app { position: fixed; inset: 0; background: var(--paper); color: var(--ink); touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+#app.booting #frame { visibility: hidden; }
+
+/* ---------- the page */
+#frame { position: absolute; top: calc(env(safe-area-inset-top, 0px) + var(--mt)); bottom: calc(env(safe-area-inset-bottom, 0px) + var(--foot)); overflow: hidden; }
+#flow {
+  column-fill: auto; font-family: var(--serif); font-size: var(--fs); line-height: 1.5;
+  text-align: justify; hyphens: auto; -webkit-hyphens: auto; font-kerning: normal;
+  overflow-wrap: break-word; widows: 2; orphans: 2;
+}
+.para { margin: 0; text-indent: 1.1em; border-radius: 3px; }
+.para.cont { text-indent: 0; }
+.para.reopen::before { content: "“"; }
+.para.sel { background: var(--sel); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.para.flash { background: var(--flash); }
+.ph { position: relative; border-radius: 2px; transition: background-color .2s; }
+.ph.scan { background: var(--scan); }
+.ph.on { background: var(--ground); }
+.ph.on::after {
+  content: attr(data-n); position: absolute; left: -5px; top: -0.72em; min-width: 15px; height: 15px; padding: 0 3px;
+  box-sizing: border-box; border-radius: 8px; background: var(--accent); color: var(--accent-ink);
+  font: 700 10px/15px var(--ui); text-align: center; text-indent: 0; pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) { .ph { transition: none; } }
+
+.titlepage {
+  box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .35em; text-align: center; text-indent: 0; break-after: column; overflow: hidden;
+}
+.titlepage .cover-art { height: min(32%, 15em); width: auto; margin-bottom: .9em; flex: none; }
+.titlepage .bk { font-variant: small-caps; letter-spacing: .14em; font-size: 1.5em; line-height: 1.2; }
+.titlepage .au { font-variant: small-caps; letter-spacing: .08em; font-size: 1.05em; }
+.titlepage .tr { font-family: var(--ui); font-size: .62em; color: var(--muted); }
+.titlepage .part { margin-top: 1em; font-weight: 700; font-size: 1.1em; }
+.titlepage .how { margin: 1.4em 0 0; max-width: 21em; font-family: var(--ui); font-size: .64em; line-height: 1.5; color: var(--muted); text-align: center; }
+.titlepage .how b { color: var(--ink); }
+
+.endmark { break-inside: avoid; text-align: center; text-indent: 0; font-family: var(--ui); font-size: .7em; color: var(--muted); padding-top: 1.4em; line-height: 1.5; }
+.endmark::before { content: ""; display: block; width: 3em; margin: 0 auto 1em; border-top: 1.5px solid var(--rule); }
+.endmark p { margin: .3em 0; }
+
+/* ---------- pictures */
+.fig { margin: 0; padding: 10px 0 4px; box-sizing: border-box; display: flex; flex-direction: column; break-inside: avoid; text-indent: 0; }
+.art-wrap { display: flex; justify-content: center; min-height: 0; }
+.art-wrap svg { height: 100%; width: auto; max-width: 100%; display: block; border-radius: 6px; }
+.fig figcaption {
+  height: 24px; display: flex; justify-content: center; align-items: baseline; gap: .55em; white-space: nowrap; overflow: hidden;
+  font: italic 13px/24px var(--serif); color: var(--muted);
+}
+.fig .tag { font: 600 11px/24px var(--ui); font-style: normal; color: var(--muted); letter-spacing: .02em; }
+.fig.grounded .tag { color: var(--accent); }
+.fig.imagined .ttl::after { content: " (imagined)"; }
+
+.art { stroke-linecap: round; stroke-linejoin: round; }
+.art .plate { fill: var(--fig-bg); }
+.art .k { stroke: var(--fig-ink); stroke-width: 2.2; }
+.art .k1 { stroke-width: 1.4; }
+.art .k3 { stroke-width: 3.4; }
+.art .n { fill: none; }
+.art .soft { opacity: .55; }
+.art .dash { stroke-dasharray: 7 6; }
+.art .w1 { fill: var(--fig-w1); }
+.art .w2 { fill: var(--fig-w2); }
+.art .w3 { fill: var(--fig-w3); }
+.art .facef { fill: var(--fig-face); }
+.art .inkf { fill: var(--fig-ink); }
+.art .floor { fill: var(--fig-floor); }
+.art .wood { fill: var(--fig-wood); }
+.art .wood2 { fill: var(--fig-wood2); }
+.art .linen { fill: var(--fig-linen); }
+.art .shell { fill: var(--fig-shell); }
+.art .belly { fill: var(--fig-belly); }
+.art .blanket { fill: var(--fig-blanket); }
+.art .ochre { fill: var(--fig-ochre); }
+.art .ochre2 { fill: var(--fig-ochre2); }
+.art .fur { fill: var(--fig-fur); }
+.art .sky { fill: var(--fig-sky); }
+.art .fog { fill: var(--fig-fog); opacity: .7; }
+.art .fab1 { fill: var(--fab1); }
+.art .fab2 { fill: var(--fab2); }
+.art .fab3 { fill: var(--fab3); }
+.art .fab4 { fill: var(--fab4); }
+.art .shade { fill: var(--fig-ink); opacity: .12; }
+.art .sheen { stroke: var(--fig-face); stroke-width: 2.4; opacity: .35; }
+.art .hem { stroke: var(--fig-face); stroke-width: 3; opacity: .55; }
+.art .leg { stroke-width: 1.7; }
+.art .rain { stroke: var(--fig-rain); stroke-width: 1.2; opacity: .55; }
+.art .trail { stroke: var(--fig-rain); stroke-width: 1.1; opacity: .5; }
+.art .drop { fill: var(--fig-drop); stroke: var(--fig-rain); stroke-width: 1; }
+.art .tick { stroke-width: 1.3; }
+.art .ghost { stroke-width: 2.2; stroke-dasharray: 3 4; opacity: .55; }
+.art .alarmhand { stroke: var(--fig-ochre); stroke-width: 3.2; }
+.art .wall { stroke: var(--fig-w3); stroke-width: 10; stroke-linecap: square; }
+.art .door { stroke: var(--fig-ochre); stroke-width: 5; }
+.art .lbl { fill: var(--fig-ink); font-family: var(--ui); font-size: 15px; font-weight: 700; stroke: none; }
+.art .lbl.small { font-size: 13px; font-weight: 600; fill: var(--fig-muted); }
+.art .lbl.num { font-size: 13px; }
+.art .lbl.caps { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; fill: var(--fig-muted); }
+.art .pins { display: none; }
+.fig.grounded .art .pins { display: inline; }
+.art .pin-c { fill: var(--accent); stroke: var(--fig-bg); stroke-width: 2.5; }
+.art .pin-t { fill: var(--accent-ink); font: 700 13px var(--ui); }
+
+/* ---------- KOReader-style chrome */
+.kbtn {
+  display: inline-flex; align-items: center; gap: 6px; border: 2px solid var(--chrome-ink); border-radius: 9px;
+  background: var(--chrome); color: var(--chrome-ink); font: 700 14px/1 var(--ui); padding: 7px 12px; cursor: pointer;
+}
+.kbtn:focus-visible, #pageno:focus-visible, .pref:focus-visible, #menu button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.kbtn svg { width: 16px; height: 16px; flex: none; }
+.kbtn[disabled] { opacity: .5; }
+
+#foot {
+  position: absolute; left: 0; right: 0; bottom: 0; height: var(--foot);
+  padding: 0 max(14px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(14px, env(safe-area-inset-left, 0px));
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; box-sizing: content-box;
+}
+#illus .dots { display: none; }
+#illus.working .dots { display: inline; }
+#illus.working .dots i { animation: blink 1s infinite; font-style: normal; }
+#illus.working .dots i:nth-child(2) { animation-delay: .2s; }
+#illus.working .dots i:nth-child(3) { animation-delay: .4s; }
+@keyframes blink { 0%, 100% { opacity: .2; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { #illus.working .dots i { animation: none; } }
+#pageno {
+  border: 0; background: none; padding: 8px 2px 8px 12px; cursor: pointer;
+  font: 12px var(--ui); color: var(--muted); font-variant-numeric: tabular-nums;
+}
+
+#explainBtn { position: absolute; z-index: 5; font-size: 16px; padding: 9px 18px; box-shadow: 0 2px 10px rgba(0, 0, 0, .12); }
+
+#toast {
+  position: absolute; z-index: 6; left: 50%; transform: translateX(-50%);
+  top: calc(env(safe-area-inset-top, 0px) + 10px);
+  width: max-content; max-width: min(30em, calc(100% - 32px)); box-sizing: border-box;
+  border: 2px solid var(--chrome-ink); border-radius: 9px; background: var(--chrome); color: var(--chrome-ink);
+  font: 14px/1.45 var(--ui); padding: 10px 14px; text-align: center; box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+}
+
+#menu {
+  position: absolute; z-index: 7; left: 0; right: 0; top: 0; background: var(--chrome); color: var(--chrome-ink);
+  border-bottom: 2px solid var(--chrome-ink); padding: calc(env(safe-area-inset-top, 0px) + 12px) 16px 14px;
+  display: grid; gap: 10px; font-family: var(--ui);
+}
+#menu .mtitle { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+#menu .mtitle b { font-size: 16px; }
+#menu .mtitle span { font-size: 13px; color: var(--muted); }
+#menu .mrow { display: flex; flex-wrap: wrap; gap: 8px; }
+#menu .mrow button { border: 2px solid var(--chrome-ink); border-radius: 9px; background: var(--chrome); font: 600 14px/1 var(--ui); padding: 9px 12px; cursor: pointer; }
+
+/* KOReader TextViewer-style window */
+#sheet { position: fixed; inset: 0; z-index: 8; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(0, 0, 0, .18); }
+#sheet .win {
+  width: 100%; max-width: 34em; max-height: min(82%, 46em); display: flex; flex-direction: column;
+  background: var(--chrome); color: var(--chrome-ink); border: 2px solid var(--chrome-ink); border-radius: 12px;
+  font-family: var(--ui); box-shadow: 0 10px 40px rgba(0, 0, 0, .2); user-select: text; -webkit-user-select: text;
+}
+#sheet header { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 10px 10px 18px; border-bottom: 1.5px solid var(--rule); }
+#sheet h2 { margin: 0; font-size: 16px; font-weight: 700; }
+#sheet .x { border: 0; background: none; font-size: 26px; line-height: 1; padding: 4px 10px; cursor: pointer; color: var(--chrome-ink); }
+#sheet .body { overflow-y: auto; padding: 6px 18px 12px; font-size: 15px; line-height: 1.55; touch-action: pan-y; }
+#sheet section { margin-top: 12px; }
+#sheet h3 { margin: 0 0 4px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+#sheet p { margin: 0 0 6px; }
+#sheet ul, #sheet ol { margin: 0; padding-left: 1.2em; }
+#sheet li { margin: 0 0 5px; }
+#sheet dl { margin: 0; }
+#sheet dt { font-weight: 700; font-family: var(--serif); font-style: italic; }
+#sheet dd { margin: 0 0 6px; }
+#sheet .mono { font: 12px/1.6 ui-monospace, Consolas, monospace; color: var(--muted); overflow-wrap: anywhere; }
+#sheet .ok { color: var(--accent); font-weight: 700; }
+#sheet a { color: var(--accent); }
+#sheet .figlink { margin-top: 14px; }
+#sheet > .win > footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px 10px 18px; border-top: 1.5px solid var(--rule); }
+#sheet .note { font-size: 12px; color: var(--muted); }
+.pref {
+  border: 0; border-radius: 6px; background: var(--ground); color: inherit; font: 700 .92em/1.2 var(--ui);
+  padding: 1px 5px; cursor: pointer;
+}
+
+</style>
+
+<div id="app" class="booting">
+  <main id="frame"><div id="flow" lang="en"></div></main>
+
+  <footer id="foot" class="ui">
+    <button id="illus" class="kbtn" type="button" title="Picture this page (I)">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 14c1.6 0 3-.6 3.4-2.2.3-1.1-.4-2-1.4-2.1C2.6 9.6 2.2 11 2.2 12.2 2.2 13 1.6 13.6 1 14h1z" fill="currentColor"/><path d="M5.6 9.4 13.4 1.6a1.1 1.1 0 0 1 1.6 1.6L7.2 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span id="illusLabel">Illustrate</span><span class="dots" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span>
+    </button>
+    <button id="pageno" type="button" title="Switch between page number and percentage">1 / 1</button>
+  </footer>
+
+  <button id="explainBtn" class="kbtn ui" type="button" hidden>Explain</button>
+  <div id="toast" class="ui" role="status" aria-live="polite" hidden></div>
+
+  <div id="menu" class="ui" hidden>
+    <div class="mtitle"><b>Metamorphosis</b><span>Franz Kafka · Part I, ¶1–¶9</span></div>
+    <div class="mrow">
+      <button type="button" data-act="smaller" aria-label="Smaller text">A−</button>
+      <button type="button" data-act="bigger" aria-label="Bigger text">A+</button>
+      <button type="button" data-act="night" id="nightBtn">Night mode</button>
+    </div>
+    <div class="mrow">
+      <button type="button" data-act="how">How it works</button>
+      <button type="button" data-act="credits">Credits</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="sheet" class="ui" hidden>
+  <div class="win" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <header><h2 id="sheetTitle"></h2><button type="button" class="x" id="sheetX" aria-label="Close">×</button></header>
+    <div class="body" id="sheetBody"></div>
+    <footer><span class="note" id="sheetNote"></span><button type="button" class="kbtn" id="sheetClose">Close</button></footer>
+  </div>
+</div>
+
+<script type="application/json" id="reader-data">{"meta":{"title":"Metamorphosis","author":"Franz Kafka","translator":"David Wyllie","part":"I","excerpt":"¶1–¶9 of Part I"},"paragraphs":[{"id":"p1","n":1,"text":"One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.","sentences":[{"a":0,"b":121,"q":false},{"a":122,"b":276,"q":false},{"a":277,"b":358,"q":false},{"a":359,"b":468,"q":false}],"phrases":[{"f":"f1","key":"bed","a":87,"b":97,"s":0,"n":1},{"f":"f1","key":"back","a":132,"b":152,"s":1,"n":2},{"f":"f1","key":"head","a":164,"b":188,"s":1,"n":3},{"f":"f1","key":"belly","a":206,"b":275,"s":1,"n":4},{"f":"f1","key":"bedding","a":277,"b":316,"s":2,"n":5},{"f":"f1","key":"legs","a":359,"b":388,"s":3,"n":6}]},{"id":"p2","n":2,"text":"“What’s happened to me?” he thought. It wasn’t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table—Samsa was a travelling salesman—and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer.","sentences":[{"a":0,"b":36,"q":false},{"a":37,"b":55,"q":false},{"a":56,"b":162,"q":false},{"a":163,"b":380,"q":false},{"a":381,"b":537,"q":false}],"phrases":[{"f":"f2","key":"small","a":95,"b":113,"s":2,"n":1},{"f":"f2","key":"walls","a":142,"b":161,"s":2,"n":2},{"f":"f2","key":"samples","a":179,"b":222,"s":3,"n":3},{"f":"f2","key":"frame","a":359,"b":379,"s":3,"n":4},{"f":"f2","key":"lady","a":391,"b":435,"s":4,"n":5},{"f":"f2","key":"muff","a":461,"b":477,"s":4,"n":6}]},{"id":"p3","n":3,"text":"Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. “How about if I sleep a little bit longer and forget all this nonsense”, he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn’t get into that position. However hard he threw himself onto his right, he always rolled back to where he was. He must have tried it a hundred times, shut his eyes so that he wouldn’t have to look at the floundering legs, and only stopped when he began to feel a mild, dull pain there that he had never felt before.","sentences":[{"a":0,"b":62,"q":false},{"a":63,"b":140,"q":false},{"a":141,"b":372,"q":false},{"a":373,"b":457,"q":false},{"a":458,"b":662,"q":false}],"phrases":[{"f":"f3","key":"window","a":22,"b":41,"s":0,"n":1},{"f":"f3","key":"weather","a":45,"b":61,"s":0,"n":2},{"f":"f3","key":"rain","a":63,"b":108,"s":1,"n":3}]},{"id":"p4","n":4,"text":"“Oh, God”, he thought, “what a strenuous career it is that I’ve chosen! Travelling day in and day out. Doing business like this takes much more effort than doing your own business at home, and on top of that there’s the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them. It can all go to Hell!” He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn’t know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder.","sentences":[{"a":0,"b":71,"q":true},{"a":72,"b":102,"q":true},{"a":103,"b":418,"q":true},{"a":419,"b":442,"q":false},{"a":443,"b":852,"q":false}],"phrases":[]},{"id":"p5","n":5,"text":"He slid back into his former position. “Getting up early all the time”, he thought, “it makes you stupid. You’ve got to get enough sleep. Other travelling salesmen live a life of luxury. For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts. I ought to just try that with my boss; I’d get kicked out on the spot. But who knows, maybe that would be the best thing for me. If I didn’t have my parents to think about I’d have given in my notice a long time ago, I’d have gone up to the boss and told him just what I think, tell him everything I would, let him know just what I feel. He’d fall right off his desk! And it’s a funny sort of business to be sitting up there at your desk, talking down at your subordinates from up there, especially when you have to go right up close because the boss is hard of hearing. Well, there’s still some hope; once I’ve got the money together to pay off my parents’ debt to him—another five or six years I suppose—that’s definitely what I’ll do. That’s when I’ll make the big change. First of all though, I’ve got to get up, my train leaves at five.”","sentences":[{"a":0,"b":38,"q":false},{"a":39,"b":105,"q":true},{"a":106,"b":137,"q":true},{"a":138,"b":186,"q":true},{"a":187,"b":355,"q":true},{"a":356,"b":426,"q":true},{"a":427,"b":484,"q":true},{"a":485,"b":693,"q":true},{"a":694,"b":723,"q":true},{"a":724,"b":926,"q":true},{"a":927,"b":1093,"q":true},{"a":1094,"b":1131,"q":true},{"a":1132,"b":1198,"q":false}],"phrases":[{"f":"f4","key":"fall","a":694,"b":723,"s":8,"n":1},{"f":"f4","key":"desk","a":764,"b":793,"s":9,"n":2},{"f":"f4","key":"talk","a":795,"b":828,"s":9,"n":3},{"f":"f4","key":"close","a":872,"b":889,"s":9,"n":4},{"f":"f4","key":"ear","a":898,"b":925,"s":9,"n":5}]},{"id":"p6","n":6,"text":"And he looked over at the alarm clock, ticking on the chest of drawers. “God in Heaven!” he thought. It was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven. Had the alarm clock not rung? He could see from the bed that it had been set for four o’clock as it should have been; it certainly must have rung. Yes, but was it possible to quietly sleep through that furniture-rattling noise? True, he had not slept peacefully, but probably all the more deeply because of that. What should he do now? The next train went at seven; if he were to catch that he would have to rush like mad and the collection of samples was still not packed, and he did not at all feel particularly fresh and lively. And even if he did catch the train he would not avoid his boss’s anger as the office assistant would have been there to see the five o’clock train go, he would have put in his report about Gregor’s not being there a long time ago. The office assistant was the boss’s man, spineless, and with no understanding. What about if he reported sick? But that would be extremely strained and suspicious as in five years of service Gregor had never once yet been ill. His boss would certainly come round with the doctor from the medical insurance company, accuse his parents of having a lazy son, and accept the doctor’s recommendation not to make any claim as the doctor believed that no-one was ever ill but that many were workshy. And what’s more, would he have been entirely wrong in this case? Gregor did in fact, apart from excessive sleepiness after sleeping for so long, feel completely well and even felt much hungrier than usual.","sentences":[{"a":0,"b":71,"q":false},{"a":72,"b":100,"q":false},{"a":101,"b":227,"q":false},{"a":228,"b":257,"q":false},{"a":258,"b":374,"q":false},{"a":375,"b":455,"q":false},{"a":456,"b":540,"q":false},{"a":541,"b":563,"q":false},{"a":564,"b":759,"q":false},{"a":760,"b":990,"q":false},{"a":991,"b":1069,"q":false},{"a":1070,"b":1101,"q":false},{"a":1102,"b":1217,"q":false},{"a":1218,"b":1483,"q":false},{"a":1484,"b":1548,"q":false},{"a":1549,"b":1689,"q":false}],"phrases":[{"f":"f5","key":"clock","a":22,"b":46,"s":0,"n":1},{"f":"f5","key":"chest","a":50,"b":70,"s":0,"n":2},{"f":"f5","key":"halfpast","a":101,"b":121,"s":2,"n":3},{"f":"f5","key":"quarter","a":200,"b":226,"s":2,"n":4},{"f":"f5","key":"alarm","a":301,"b":321,"s":4,"n":5}]},{"id":"p7","n":7,"text":"He was still hurriedly thinking all this through, unable to decide to get out of the bed, when the clock struck quarter to seven. There was a cautious knock at the door near his head. “Gregor”, somebody called—it was his mother—“it’s quarter to seven. Didn’t you want to go somewhere?” That gentle voice! Gregor was shocked when he heard his own voice answering, it could hardly be recognised as the voice he had had before. As if from deep inside him, there was a painful and uncontrollable squeaking mixed in with it, the words could be made out at first but then there was a sort of echo which made them unclear, leaving the hearer unsure whether he had heard properly or not. Gregor had wanted to give a full answer and explain everything, but in the circumstances contented himself with saying: “Yes, mother, yes, thank-you, I’m getting up now.” The change in Gregor’s voice probably could not be noticed outside through the wooden door, as his mother was satisfied with this explanation and shuffled away. But this short conversation made the other members of the family aware that Gregor, against their expectations was still at home, and soon his father came knocking at one of the side doors, gently, but with his fist. “Gregor, Gregor”, he called, “what’s wrong?” And after a short while he called again with a warning deepness in his voice: “Gregor! Gregor!” At the other side door his sister came plaintively: “Gregor? Aren’t you well? Do you need anything?” Gregor answered to both sides: “I’m ready, now”, making an effort to remove all the strangeness from his voice by enunciating very carefully and putting long pauses between each, individual word. His father went back to his breakfast, but his sister whispered: “Gregor, open the door, I beg of you.” Gregor, however, had no thought of opening the door, and instead congratulated himself for his cautious habit, acquired from his travelling, of locking all doors at night even when he was at home.","sentences":[{"a":0,"b":129,"q":false},{"a":130,"b":183,"q":false},{"a":184,"b":251,"q":true},{"a":252,"b":285,"q":false},{"a":286,"b":304,"q":false},{"a":305,"b":424,"q":false},{"a":425,"b":679,"q":false},{"a":680,"b":850,"q":false},{"a":851,"b":1011,"q":false},{"a":1012,"b":1228,"q":false},{"a":1229,"b":1273,"q":false},{"a":1274,"b":1360,"q":true},{"a":1361,"b":1369,"q":false},{"a":1370,"b":1430,"q":true},{"a":1431,"b":1447,"q":true},{"a":1448,"b":1470,"q":false},{"a":1471,"b":1666,"q":false},{"a":1667,"b":1770,"q":false},{"a":1771,"b":1967,"q":false}],"phrases":[{"f":"f6","key":"bed","a":50,"b":88,"s":0,"n":1},{"f":"f6","key":"mother","a":140,"b":182,"s":1,"n":2},{"f":"f6","key":"father","a":1167,"b":1227,"s":9,"n":3},{"f":"f6","key":"sister","a":1370,"b":1403,"s":13,"n":4},{"f":"f6","key":"locked","a":1915,"b":1941,"s":18,"n":5}]},{"id":"p8","n":8,"text":"The first thing he wanted to do was to get up in peace without being disturbed, to get dressed, and most of all to have his breakfast. Only then would he consider what to do next, as he was well aware that he would not bring his thoughts to any sensible conclusions by lying in bed. He remembered that he had often felt a slight pain in bed, perhaps caused by lying awkwardly, but that had always turned out to be pure imagination and he wondered how his imaginings would slowly resolve themselves today. He did not have the slightest doubt that the change in his voice was nothing more than the first sign of a serious cold, which was an occupational hazard for travelling salesmen.","sentences":[{"a":0,"b":134,"q":false},{"a":135,"b":282,"q":false},{"a":283,"b":504,"q":false},{"a":505,"b":683,"q":false}],"phrases":[]},{"id":"p9","n":9,"text":"It was a simple matter to throw off the covers; he only had to blow himself up a little and they fell off by themselves. But it became difficult after that, especially as he was so exceptionally broad. He would have used his arms and his hands to push himself up; but instead of them he only had all those little legs continuously moving in different directions, and which he was moreover unable to control. If he wanted to bend one of them, then that was the first one that would stretch itself out; and if he finally managed to do what he wanted with that leg, all the others seemed to be set free and would move about painfully. “This is something that can’t be done in bed”, Gregor said to himself, “so don’t keep trying to do it”.","sentences":[{"a":0,"b":120,"q":false},{"a":121,"b":201,"q":false},{"a":202,"b":407,"q":false},{"a":408,"b":631,"q":false},{"a":632,"b":735,"q":false}],"phrases":[]}],"figures":[{"id":"f1","p":"p1","scene":"bed","title":"Gregor, transformed","imagined":false,"anchor":"legs","anchorSentence":3,"params":{"legs":8},"elements":[{"key":"bed","p":"p1","quote":"in his bed","n":1},{"key":"back","p":"p1","quote":"his armour-like back","n":2},{"key":"head","p":"p1","quote":"lifted his head a little","n":3},{"key":"belly","p":"p1","quote":"brown belly, slightly domed and divided by arches into stiff sections","n":4},{"key":"bedding","p":"p1","quote":"The bedding was hardly able to cover it","n":5},{"key":"legs","p":"p1","quote":"His many legs, pitifully thin","n":6}]},{"id":"f2","p":"p2","scene":"room","title":"His room","imagined":false,"anchor":"muff","anchorSentence":4,"params":{},"elements":[{"key":"small","p":"p2","quote":"a little too small","n":1},{"key":"walls","p":"p2","quote":"four familiar walls","n":2},{"key":"samples","p":"p2","quote":"textile samples lay spread out on the table","n":3},{"key":"frame","p":"p2","quote":"a nice, gilded frame","n":4},{"key":"lady","p":"p2","quote":"a lady fitted out with a fur hat and fur boa","n":5},{"key":"muff","p":"p2","quote":"a heavy fur muff","n":6}]},{"id":"f3","p":"p3","scene":"window","title":"Rain on the pane","imagined":false,"anchor":"rain","anchorSentence":1,"params":{},"elements":[{"key":"window","p":"p3","quote":"look out the window","n":1},{"key":"weather","p":"p3","quote":"the dull weather","n":2},{"key":"rain","p":"p3","quote":"Drops of rain could be heard hitting the pane","n":3}]},{"id":"f4","p":"p5","scene":"desk","title":"The boss at his high desk","imagined":true,"anchor":"ear","anchorSentence":9,"params":{},"elements":[{"key":"fall","p":"p5","quote":"He’d fall right off his desk!","n":1},{"key":"desk","p":"p5","quote":"sitting up there at your desk","n":2},{"key":"talk","p":"p5","quote":"talking down at your subordinates","n":3},{"key":"close","p":"p5","quote":"go right up close","n":4},{"key":"ear","p":"p5","quote":"the boss is hard of hearing","n":5}]},{"id":"f5","p":"p6","scene":"clock","title":"Quarter to seven","imagined":false,"anchor":"alarm","anchorSentence":4,"params":{"earlier":"6:30","now":"6:45","alarm":"4:00"},"elements":[{"key":"clock","p":"p6","quote":"the alarm clock, ticking","n":1},{"key":"chest","p":"p6","quote":"the chest of drawers","n":2},{"key":"halfpast","p":"p6","quote":"It was half past six","n":3},{"key":"quarter","p":"p6","quote":"more like quarter to seven","n":4},{"key":"alarm","p":"p6","quote":"set for four o’clock","n":5}]},{"id":"f6","p":"p7","scene":"doors","title":"Three doors, all locked","imagined":false,"anchor":"locked","anchorSentence":18,"params":{},"elements":[{"key":"bed","p":"p7","quote":"unable to decide to get out of the bed","n":1},{"key":"mother","p":"p7","quote":"a cautious knock at the door near his head","n":2},{"key":"father","p":"p7","quote":"knocking at one of the side doors, gently, but with his fist","n":3},{"key":"sister","p":"p7","quote":"At the other side door his sister","n":4},{"key":"locked","p":"p7","quote":"locking all doors at night","n":5}]}],"skips":{"p4":"¶4 is Gregor complaining about his job. The one physical detail, an itch, is too small to picture well.","p8":"¶8 is plans and excuses. Nothing happens that you could see.","p9":"¶9 is his struggle with his legs, which the picture for ¶1 already shows."},"explain":{"p1":{"gist":"Gregor Samsa wakes up and finds he has turned into a huge, insect-like creature. He is lying on a hard, shell-like back. When he lifts his head he can see his rounded brown belly and a lot of thin legs waving in the air.","context":["This is the first sentence of the story, and it gives away the shock at once. Kafka never explains how or why it happened. The story is about what happens next.","Kafka wrote it in late 1912. It was published in 1915."],"terms":[["vermin","Kafka’s German word is Ungeziefer: a general word for pests such as bugs or lice. Its old root meant an unclean animal unfit for sacrifice. He never names a species. The well-known Muir translation says “gigantic insect” instead."],["armour-like back","A hard shell, like a beetle’s."]],"why":"In 1915 Kafka asked his publisher not to draw the insect on the cover, not even from a distance. The picture here sticks to what this paragraph actually states: the back, the belly, the legs and the sliding bedding."},"p2":{"gist":"Gregor asks himself what has happened, and says it is not a dream. His room looks completely normal: small and familiar, his cloth samples spread on the table, and on the wall a magazine picture of a lady in furs that he framed himself.","context":["Right after the shock of ¶1, the ordinary room is the proof that he is awake.","The samples tell us his job: he travels around selling cloth for a company."],"terms":[["textile samples","Pieces of cloth a salesman shows to customers to take orders."],["boa","A long, thick scarf, here made of fur."],["muff","A tube of fur you push both hands into to keep them warm."]],"why":"The calm, everyday room makes the change in ¶1 feel stranger. The framed picture is one of the few things in the room that Gregor chose for himself. Some critics hear an echo of Sacher-Masoch’s 1870 novel Venus in Furs in it."},"p3":{"gist":"The rain on the window makes him sad. He tries to go back to sleep on his right side, as he always does, but his new rounded back keeps rocking him over. After about a hundred tries he gives up, feeling a dull ache in his side he has never felt before.","context":["The “armour-like back” from ¶1 is why he can’t turn over: he rolls back like a beetle.","He still thinks like his old self. His plan is to sleep a bit more and “forget all this nonsense”."],"terms":[["dull weather","Grey and overcast."],["floundering","Moving clumsily, struggling."]],"why":"The narration stays flat and practical while something impossible is happening. That deadpan tone is a large part of Kafka’s style."},"p4":{"gist":"Instead of panicking about his body, Gregor complains about his job: constant travel, worrying about trains, bad meals, never getting close to anyone. Then he notices an itchy patch on his belly covered in little white spots. He touches it with a leg and shudders.","context":["¶2 told us he is a travelling salesman. Here we hear how much he hates it.","He now uses one of the thin legs from ¶1 the way he used to use a hand."],"terms":[["strenuous","Exhausting."],["the curse of travelling","The misery of always being on the road."]],"why":"His job is the first thing he worries about, even now. That tells you what Gregor’s life has been like: work comes first."},"p5":{"gist":"He imagines quitting and telling his boss exactly what he thinks, but he can’t. His parents owe the boss money, and he needs five or six more years to pay it off. Then he remembers that his train leaves at five.","context":["The debt explains the misery of ¶4: he is stuck in this job for his family.","The boss sits at a high desk and talks down to his staff. Gregor pictures him falling off it."],"terms":[["copy out the contract","Write out a clean copy of the orders he has taken."],["subordinates","Staff who work under you."],["hard of hearing","Partly deaf."]],"why":"Gregor is paying off his parents’ debt himself. Who depends on whom in this family is a question the story keeps coming back to."},"p6":{"gist":"He looks at the alarm clock: it is already a quarter to seven. The alarm was set for four and must have rung, but he slept through it. He has missed the five o’clock train. The next one leaves at seven and his samples aren’t even packed. He thinks about calling in sick, but the firm would send a doctor who believes nobody is ever really ill.","context":["In ¶5 he said his train leaves at five, so he is now almost two hours late.","In five years of work he has never been ill once, so a sick call would look suspicious."],"terms":[["chest of drawers","A dresser."],["office assistant","The firm’s junior employee who waited at the station and will report him."],["medical insurance company","The health insurer. Its doctor would check whether he is really sick."],["workshy","Lazy, avoiding work."]],"why":"Kafka himself worked at an accident insurance institute in Prague from 1908, so he knew this world of reports, doctors and suspicion from the inside."},"p7":{"gist":"At a quarter to seven his mother knocks at the door near his head. When he answers, his voice comes out with a strange squeak in it. His father knocks at one side door and his sister calls through the other. He says he is getting up, but he keeps all the doors locked.","context":["His room has three doors, one to each part of the flat, so his family can surround him without seeing him.","Locking every door at night is a habit from staying in hotels as a travelling salesman (¶2, ¶4)."],"terms":[["plaintively","Sadly, pleadingly."],["enunciating","Pronouncing each word very clearly."]],"why":"This is his first contact with his family since the change, and nobody can see him. The locked doors buy him time and also keep him apart from them."},"p8":{"gist":"He wants to get up calmly, get dressed and eat breakfast before deciding anything. He tells himself that the strange voice is just the start of a bad cold.","context":["This is how he explains away the squeaking voice from ¶7.","He even blames the cold on his job (¶4): it is an “occupational hazard” of travelling."],"terms":[["occupational hazard","A risk that comes with a particular job."]],"why":"Gregor keeps finding ordinary explanations for something that is not ordinary. Watching him do it is both funny and sad."},"p9":{"gist":"The covers slide off easily, but getting up is hard. He is very wide, and instead of arms he has lots of small legs that all move on their own. When he bends one, another stretches out. He decides it can’t be done in bed.","context":["The “many legs, pitifully thin” from ¶1 are now the problem: he can’t control them.","He talks to himself like a coach: “so don’t keep trying to do it”."],"terms":[["exceptionally broad","Very wide."]],"why":"Kafka turns a simple action, getting out of bed, into a long struggle. The exact detail about each leg makes an impossible situation feel physical."}},"fingerprints":{"f1":"5ece7191","f2":"47ef0169","f3":"b885cee4","f4":"1717785a","f5":"c63d66bf","f6":"19b8b18e"}}</script>
+<script>
+/* Deterministic SVG illustration engine.
+   Art.render(spec) -> SVG markup. The same spec always gives byte-identical
+   markup: there is no Math.random and no clock. Texture that looks random (rain,
+   leg angles, fabric) comes from a PRNG seeded by the figure id, and every
+   coordinate is rounded to 0.1 before it is written out.
+   Each drawn element is a <g data-el="key"> matching an element of the spec,
+   and each element has a numbered pin that the reader shows on request. */
+const Art = (() => {
+  'use strict';
+
+  function hash(str) {
+    let h = 0x811c9dc5;
+    for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
+    return h >>> 0;
+  }
+  function rng(seed) {
+    let a = seed >>> 0;
+    return () => {
+      a = (a + 0x6D2B79F5) >>> 0;
+      let t = a;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  const n = v => { const r = Math.round(v * 10) / 10; return Object.is(r, -0) ? '0' : String(r); };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const rad = d => d * Math.PI / 180;
+  // Angle in degrees clockwise from 12 o'clock, like a clock hand.
+  const polar = (cx, cy, r, deg) => [cx + r * Math.sin(rad(deg)), cy - r * Math.cos(rad(deg))];
+  const P = (x, y) => n(x) + ',' + n(y);
+  const g = (key, body) => `<g class="el" data-el="${key}">${body}</g>`;
+  const stroke = (d, cls = '') => `<path class="k n ${cls}" d="${d}"/>`;
+
+  // ---------------------------------------------------------------- ¶1 bed
+  function bed(p, r) {
+    const out = [], pins = {};
+    out.push('<rect class="plate" width="480" height="320" rx="8"/>');
+    out.push('<rect class="w1" y="286" width="480" height="34"/>' + stroke('M0,286 H480', 'k1'));
+    out.push('<ellipse class="shade" cx="252" cy="291" rx="196" ry="5"/>');
+
+    out.push(g('bed',
+      '<rect class="wood k" x="98" y="250" width="12" height="38"/>' +
+      '<rect class="wood k" x="398" y="250" width="12" height="38"/>' +
+      '<rect class="wood k" x="52" y="112" width="40" height="176" rx="12"/>' +
+      stroke('M72,130 V272', 'k1') +
+      '<rect class="wood k" x="414" y="168" width="30" height="120" rx="9"/>' +
+      '<rect class="wood k" x="88" y="236" width="330" height="18" rx="3"/>' +
+      '<rect class="linen k" x="88" y="206" width="330" height="30" rx="9"/>' +
+      '<path class="linen k" d="M98,200 Q100,184 140,184 Q182,184 184,198 Q182,210 140,210 Q100,210 98,200 Z"/>'));
+    pins.bed = [72, 98];
+
+    // Body: an ellipse lying on its back. Lower band = shell, upper dome = belly.
+    const cx = 268, cy = 172, rx = 116, ry = 38, rimY = 180;
+    const half = rx * Math.sqrt(1 - ((rimY - cy) / ry) ** 2);
+    const xL = cx - half, xR = cx + half, span = xR - xL;
+    const yTop = x => cy - ry * Math.sqrt(Math.max(0, 1 - ((x - cx) / rx) ** 2));
+    const yRim = x => { const t = (x - xL) / span; return rimY + 32 * t * (1 - t); };
+
+    out.push(g('back',
+      `<path class="shell k" d="M${P(xL, rimY)} A${rx},${ry} 0 0 0 ${P(xR, rimY)} Q${P(cx, rimY + 16)} ${P(xL, rimY)} Z"/>` +
+      stroke(`M${P(xL + 22, 193)} Q${P(cx, 214)} ${P(xR - 22, 193)}`, 'sheen')));
+    pins.back = [236, 216];
+
+    let arches = '';
+    for (let i = 1; i <= 8; i++) {
+      const x = xL + i * span / 9, y0 = yRim(x), y1 = yTop(x - 3) + 2;
+      arches += stroke(`M${P(x, y0)} Q${P(x - 9, (y0 + y1) / 2)} ${P(x - 3, y1)}`, 'k1');
+    }
+    out.push(g('belly',
+      `<path class="belly k" d="M${P(xL, rimY)} Q${P(cx, rimY + 16)} ${P(xR, rimY)} A${rx},${ry} 0 1 0 ${P(xL, rimY)} Z"/>` +
+      arches + stroke(`M${P(xL + 34, 151)} Q${P(cx, 129)} ${P(xR - 40, 150)}`, 'sheen')));
+    pins.belly = [256, 158];
+
+    out.push(g('head',
+      '<ellipse class="shell k" cx="141" cy="166" rx="17" ry="14" transform="rotate(-28 141 166)"/>' +
+      '<circle class="inkf" cx="134" cy="160" r="2.4"/>' +
+      stroke('M131,155 Q118,137 99,131 M127,161 Q111,151 92,152', 'k1') +
+      stroke('M127,173 l-7,4 M130,177 l-5,7', 'k1')));
+    pins.head = [112, 190];
+
+    // Legs: thin two-segment legs waving from the dome; angles from the PRNG.
+    const count = p.legs || 8;
+    let legs = '';
+    const tips = [];
+    for (let i = 0; i < count; i++) {
+      const x = 170 + i * 21, by = yTop(x) + 5;
+      const a1 = -90 + (i - (count - 1) / 2) * 7 + (r() - 0.5) * 26;
+      const l1 = 24 + r() * 10;
+      const kx = x + l1 * Math.cos(rad(a1)), ky = by + l1 * Math.sin(rad(a1));
+      const a2 = a1 + (i % 2 ? 40 : -40) + (r() - 0.5) * 20;
+      const l2 = 20 + r() * 10;
+      const fx = kx + l2 * Math.cos(rad(a2)), fy = ky + l2 * Math.sin(rad(a2));
+      const cx2 = fx + 6 * Math.cos(rad(a2 + 70)), cy2 = fy + 6 * Math.sin(rad(a2 + 70));
+      legs += stroke(`M${P(x, by)} L${P(kx, ky)} L${P(fx, fy)} L${P(cx2, cy2)}`, 'leg');
+      tips.push([fx, fy]);
+    }
+    for (const i of [0, 3, 6]) {
+      if (!tips[i]) continue;
+      const [fx, fy] = tips[i];
+      legs += stroke(`M${P(fx + 9, fy - 6)} q5,5 0,11 M${P(fx - 9, fy - 6)} q-5,5 0,11`, 'k1 soft');
+    }
+    out.push(g('legs', legs));
+    pins.legs = [158, 92];
+
+    const by0 = yTop(322);
+    out.push(g('bedding',
+      `<path class="blanket k" d="M${P(322, by0)} C345,136 372,150 386,176 L412,206 L418,266 Q372,284 318,270 Q306,236 312,206 Q314,170 ${P(322, by0)} Z"/>` +
+      stroke('M322,257 Q370,272 414,254', 'hem') +
+      stroke('M342,152 Q352,200 344,262 M372,164 Q386,212 388,272', 'k1 soft') +
+      stroke('M398,286 l9,7 M378,288 l9,7', 'k1')));
+    pins.bedding = [394, 232];
+    return { body: out.join(''), pins };
+  }
+
+  // ---------------------------------------------------------------- ¶2 room
+  function room(p, r, uid) {
+    const out = [], pins = {};
+    // One-point perspective, vanishing point (240,130), back wall 100..380 x 40..246.
+    const defs =
+      `<pattern id="${uid}-st" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="7" height="7" class="fab2"/><rect width="3" height="7" class="inkf" opacity=".28"/></pattern>` +
+      `<pattern id="${uid}-ck" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" class="fab1"/><rect width="5" height="10" class="inkf" opacity=".16"/><rect width="10" height="5" class="inkf" opacity=".16"/></pattern>` +
+      `<pattern id="${uid}-dt" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" class="fab3"/><circle cx="4" cy="4" r="1.4" class="facef" opacity=".7"/></pattern>` +
+      `<pattern id="${uid}-hb" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" class="fab4"/><path d="M0,8 L4,0 L8,8" class="k n" stroke-width="1" opacity=".35"/></pattern>`;
+    out.push('<rect class="plate" width="480" height="320" rx="8"/>');
+    out.push(g('small', '<path class="w1 k k1" d="M37.8,0 H442.2 L380,40 H100 Z"/>'));
+    pins.small = [240, 20];
+    let planks = '';
+    for (let x = 135; x < 380; x += 35) {
+      const xb = 240 + (x - 240) * (190 / 116);
+      planks += stroke(`M${P(x, 246)} L${P(xb, 320)}`, 'k1 soft');
+    }
+    out.push(g('walls',
+      '<path class="w2 k k1" d="M0,0 H37.8 L100,40 V246 L10.7,320 H0 Z"/>' +
+      '<path class="w2 k k1" d="M480,0 H442.2 L380,40 V246 L469.3,320 H480 Z"/>' +
+      '<rect class="w1 k k1" x="100" y="40" width="280" height="206"/>' +
+      '<path class="floor k k1" d="M100,246 H380 L469.3,320 H10.7 Z"/>' + planks));
+    pins.walls = [42, 150];
+
+    // Table against the back wall.
+    let table =
+      '<rect class="wood k" x="156" y="212" width="8" height="34"/><rect class="wood k" x="316" y="212" width="8" height="34"/>' +
+      '<path class="wood k" d="M150,194 H330 L342,214 H138 Z"/>' +
+      '<rect class="wood k" x="138" y="214" width="204" height="10"/>' +
+      '<rect class="wood k" x="144" y="224" width="9" height="40"/><rect class="wood k" x="327" y="224" width="9" height="40"/>';
+    // Samples spread on the top, two hanging over the front edge.
+    const fills = [`url(#${uid}-st)`, `url(#${uid}-ck)`, `url(#${uid}-dt)`, `url(#${uid}-hb)`];
+    const spots = [[170, 197], [205, 199], [246, 196], [282, 198], [310, 200]];
+    let samples = '';
+    spots.forEach(([x, y], i) => {
+      const w = 26 + r() * 10, sk = (r() - 0.5) * 8;
+      samples += `<path class="k k1" fill="${fills[i % 4]}" d="M${P(x, y)} h${n(w)} l${n(4 + sk)},12 h${n(-w - 2)} Z"/>`;
+    });
+    samples += `<path class="k k1" fill="${fills[1]}" d="M214,210 h30 l-1,28 q-14,4 -28,0 Z"/>`;
+    samples += `<path class="k k1" fill="${fills[2]}" d="M268,210 h26 l2,22 q-13,5 -27,1 Z"/>`;
+    out.push(table);
+    out.push(g('samples', samples));
+    pins.samples = [300, 250];
+
+    out.push(g('frame',
+      '<rect class="ochre k" x="196" y="56" width="88" height="114" rx="3"/>' +
+      '<rect class="ochre2 k k1" x="203" y="63" width="74" height="100"/>' +
+      [[199, 59], [281, 59], [199, 167], [281, 167]].map(([x, y]) => `<circle class="ochre k k1" cx="${x}" cy="${y}" r="4.5"/>`).join('') +
+      '<rect class="facef k k1" x="208" y="68" width="64" height="90"/>' + stroke('M240,56 L232,46 L248,46 Z', 'k1')));
+    pins.frame = [294, 66];
+
+    out.push(g('lady',
+      '<path class="w3 k k1" d="M226,112 H254 L264,158 H216 Z"/>' +
+      '<circle class="facef k k1" cx="240" cy="96" r="9"/>' +
+      '<path class="fur k k1" d="M229,92 Q229,76 240,76 Q251,76 251,92 q-2.75,-3 -5.5,0 q-2.75,-3 -5.5,0 q-2.75,-3 -5.5,0 q-2.75,-3 -5.5,0 Z"/>' +
+      '<path class="fur k k1" d="M222,110 q4.5,-6 9,0 q4.5,-6 9,0 q4.5,-6 9,0 q4.5,-6 9,0 l-1,8 q-4,4 -8,0 q-4,4 -8,0 q-4,4 -8,0 q-4,4 -8,0 Z"/>' +
+      stroke('M253,114 Q262,124 252,130', 'k1')));
+    pins.lady = [214, 88];
+
+    out.push(g('muff',
+      '<path class="fur k k1" d="M233,126 q4,-5 8,0 q4,-5 8,0 q4,-5 8,0 q5,8 0,17 q-4,5 -8,0 q-4,5 -8,0 q-4,5 -8,0 q-5,-8 0,-17 Z"/>' +
+      '<ellipse class="w3 k k1" cx="257" cy="134.5" rx="3" ry="6"/>'));
+    pins.muff = [270, 128];
+    return { defs, body: out.join(''), pins };
+  }
+
+  // -------------------------------------------------------------- ¶3 window
+  function windowScene(p, r, uid) {
+    const out = [], pins = {};
+    const ox = 114, oy = 44, ow = 252, oh = 210;
+    const defs = `<clipPath id="${uid}-g"><rect x="${ox}" y="${oy}" width="${ow}" height="${oh}"/></clipPath>`;
+    out.push('<rect class="plate" width="480" height="320" rx="8"/>');
+    out.push('<rect class="w1" x="0" y="0" width="480" height="320" rx="8"/>');
+
+    let weather = `<rect class="sky" x="${ox}" y="${oy}" width="${ow}" height="${oh}"/>`;
+    weather += '<path class="fog" d="M114,92 Q170,76 226,90 T366,84 V122 Q300,112 240,122 T114,118 Z"/>';
+    weather += '<path class="fog" d="M114,190 Q180,176 250,192 T366,186 V254 H114 Z"/>';
+    let streaks = '';
+    for (let i = 0; i < 70; i++) {
+      const x = ox + r() * ow, y = oy + r() * oh, len = 10 + r() * 14;
+      streaks += `M${P(x, y)} l${n(-len * 0.276)},${n(len * 0.961)} `;
+    }
+    weather += `<path class="rain n" d="${streaks.trim()}"/>`;
+    out.push(g('weather', `<g clip-path="url(#${uid}-g)">${weather}</g>`));
+    pins.weather = [306, 104];
+
+    // Drops on the glass, kept off the mullions.
+    let drops = '';
+    const panes = [[ox, oy, 121, 100], [245, oy, 121, 100], [ox, 154, 121, 100], [245, 154, 121, 100]];
+    for (let i = 0; i < 34; i++) {
+      const [px, py, pw, ph] = panes[i % 4];
+      const x = px + 8 + r() * (pw - 16), y = py + 10 + r() * (ph - 18);
+      const rr = 1.8 + r() * r() * 4.6;
+      const trail = 3 + r() * 12;
+      drops += stroke(`M${P(x, y - rr)} l0,${n(-trail)}`, 'trail');
+      drops += `<circle class="drop" cx="${n(x)}" cy="${n(y)}" r="${n(rr)}"/>`;
+      drops += `<circle class="facef" cx="${n(x - rr * 0.35)}" cy="${n(y - rr * 0.35)}" r="${n(rr * 0.32)}" opacity=".85"/>`;
+      if (i % 9 === 4) drops += stroke(`M${P(x - rr - 2, y)} l-4,-2 M${P(x + rr + 2, y)} l4,-2 M${P(x, y - rr - 3)} l0,-3`, 'trail');
+    }
+    out.push(g('rain', `<g clip-path="url(#${uid}-g)">${drops}</g>`));
+    pins.rain = [180, 208];
+
+    out.push(g('window',
+      `<path class="wood k" fill-rule="evenodd" d="M98,28 H382 V270 H98 Z M${ox},${oy} V${oy + oh} H${ox + ow} V${oy} Z"/>` +
+      `<rect class="wood k" x="235" y="${oy}" width="10" height="${oh}"/>` +
+      `<rect class="wood k" x="${ox}" y="144" width="${ow}" height="10"/>` +
+      '<rect class="wood k" x="86" y="270" width="308" height="14" rx="2"/>' +
+      '<rect class="shade" x="96" y="284" width="288" height="6"/>'));
+    pins.window = [98, 150];
+    return { defs, body: out.join(''), pins };
+  }
+
+  // ------------------------------------------------------- ¶5 desk (imagined)
+  function desk(p, r) {
+    const out = [], pins = {};
+    out.push('<rect class="plate" width="480" height="320" rx="8"/>');
+    out.push('<rect class="facef k dash" x="10" y="10" width="460" height="300" rx="26"/>');
+    out.push('<text class="lbl caps" x="34" y="42">Imagined</text>');
+    out.push(stroke('M40,292 H440', 'k1'));
+
+    out.push(g('fall',
+      stroke('M372,46 q14,12 6,30 M386,40 q18,16 8,40', 'k1') +
+      stroke('M352,108 l14,-6 M354,118 l15,-2', 'k1 soft')));
+    pins.fall = [402, 34];
+
+    out.push(g('talk',
+      '<path class="w3 k" d="M302,112 L292,78 Q312,64 338,72 L352,112 Z"/>' +
+      '<circle class="facef k" cx="284" cy="62" r="15"/>' +
+      stroke('M271,58 q-2,4 0,8', 'k1') + '<circle class="inkf" cx="278" cy="58" r="1.8"/>' +
+      stroke('M268,70 l-6,4', 'k1') +
+      stroke('M258,82 l-16,12 M262,92 l-15,16 M253,74 l-19,6', 'k1')));
+    pins.talk = [234, 64];
+
+    out.push(g('ear',
+      stroke('M330,84 Q318,58 300,54', '') +
+      '<path class="facef k k1" d="M298,48 q6,-2 7,5 q1,7 -6,9 q-5,-4 -1,-14 Z"/>'));
+    pins.ear = [312, 30];
+
+    out.push(g('desk',
+      '<path class="wood k" d="M262,112 H410 L402,124 H270 Z"/>' +
+      '<rect class="wood k" x="270" y="124" width="132" height="168"/>' +
+      '<rect class="w2 k k1" x="284" y="140" width="104" height="58" rx="2"/>' +
+      '<rect class="w2 k k1" x="284" y="212" width="104" height="66" rx="2"/>' +
+      '<path class="facef k k1" d="M318,104 l30,-3 l2,10 l-30,3 Z"/>'));
+    pins.desk = [414, 206];
+
+    out.push(g('close',
+      '<path class="w3 k" d="M206,206 Q222,198 238,206 L248,282 H198 Z"/>' +
+      stroke('M226,292 V282 M214,292 V282', '') +
+      '<circle class="facef k" cx="226" cy="190" r="12"/>' +
+      '<path class="w3 k k1" d="M213,184 q13,-14 26,0 Z"/><path class="k n k1" d="M209,184 H243"/>' +
+      stroke('M238,214 Q256,226 262,238', '') +
+      '<rect class="ochre k" x="176" y="246" width="30" height="22" rx="3"/>' + stroke('M186,246 v-5 h10 v5', 'k1') +
+      stroke('M208,216 Q196,232 192,246', '')));
+    pins.close = [174, 196];
+    return { body: out.join(''), pins };
+  }
+
+  // ---------------------------------------------------------------- ¶6 clock
+  function clock(p) {
+    const out = [], pins = {};
+    const t = s => { const [h, m] = String(s).split(':').map(Number); return { hour: ((h % 12) + m / 60) * 30, min: m * 6 }; };
+    const now = t(p.now || '6:45'), earlier = t(p.earlier || '6:30'), alarm = t(p.alarm || '4:00');
+    const cx = 240, cy = 112;
+    out.push('<rect class="plate" width="480" height="320" rx="8"/>');
+    out.push('<rect class="w1" y="290" width="480" height="30"/>' + stroke('M0,290 H480', 'k1'));
+
+    out.push(g('chest',
+      '<rect class="wood k" x="100" y="180" width="280" height="12" rx="2"/>' +
+      '<rect class="wood k" x="112" y="192" width="256" height="92"/>' +
+      [200, 229, 258].map(y => `<rect class="wood2 k k1" x="122" y="${y}" width="236" height="24" rx="2"/>` +
+        `<circle class="ochre k k1" cx="190" cy="${y + 12}" r="3.5"/><circle class="ochre k k1" cx="290" cy="${y + 12}" r="3.5"/>`).join('') +
+      '<rect class="wood k" x="118" y="284" width="14" height="6"/><rect class="wood k" x="348" y="284" width="14" height="6"/>'));
+    pins.chest = [384, 238];
+
+    let face = '';
+    for (let i = 0; i < 60; i++) {
+      const [x1, y1] = polar(cx, cy, 46, i * 6), [x2, y2] = polar(cx, cy, i % 5 ? 42.5 : 38, i * 6);
+      face += `M${P(x1, y1)} L${P(x2, y2)} `;
+    }
+    const nums = [[12, 0], [3, 90], [6, 180], [9, 270]].map(([v, a]) => {
+      const [x, y] = polar(cx, cy, 29, a);
+      return `<text class="lbl num" x="${n(x)}" y="${n(y + 5)}" text-anchor="middle">${v}</text>`;
+    }).join('');
+    const [b1x, b1y] = polar(cx, cy, 58, -36), [b2x, b2y] = polar(cx, cy, 58, 36);
+    out.push(g('clock',
+      stroke(`M${P(cx - 22, cy + 50)} L${P(cx - 32, cy + 68)} M${P(cx + 22, cy + 50)} L${P(cx + 32, cy + 68)}`, 'k3') +
+      `<circle class="w3 k" cx="${n(b1x)}" cy="${n(b1y)}" r="16"/><circle class="w3 k" cx="${n(b2x)}" cy="${n(b2y)}" r="16"/>` +
+      stroke(`M${P(cx, cy - 56)} V${n(cy - 70)}`, 'k3') + `<circle class="w3 k" cx="${cx}" cy="${cy - 72}" r="4"/>` +
+      `<circle class="w3 k" cx="${cx}" cy="${cy}" r="56"/><circle class="facef k k1" cx="${cx}" cy="${cy}" r="48"/>` +
+      `<path class="k n tick" d="${face.trim()}"/>` + nums +
+      stroke('M158,82 q-8,10 0,20 M148,76 q-12,16 0,32 M322,82 q8,10 0,20 M332,76 q12,16 0,32', 'k1 soft')));
+    pins.clock = [312, 50];
+
+    const hand = (deg, len, cls) => { const [x, y] = polar(cx, cy, len, deg); return stroke(`M${P(cx, cy)} L${P(x, y)}`, cls); };
+    const [g1x, g1y] = polar(cx, cy, 43, earlier.min + 6), [g2x, g2y] = polar(cx, cy, 43, now.min - 6);
+    out.push(g('halfpast',
+      hand(earlier.min, 38, 'ghost') +
+      stroke(`M${P(g1x, g1y)} A43,43 0 0 1 ${P(g2x, g2y)}`, 'k1 soft') +
+      (() => { const [ax, ay] = polar(cx, cy, 43, now.min - 6), [bx, by] = polar(cx, cy, 39, now.min - 13), [dx, dy] = polar(cx, cy, 47, now.min - 13);
+        return stroke(`M${P(bx, by)} L${P(ax, ay)} L${P(dx, dy)}`, 'k1 soft'); })()));
+    pins.halfpast = [262, 176];
+
+    const [atx, aty] = polar(cx, cy, 34, alarm.hour);
+    out.push(g('alarm',
+      stroke(`M${P(cx, cy)} L${P(atx, aty)}`, 'alarmhand') +
+      `<circle class="ochre k k1" cx="${n(atx)}" cy="${n(aty)}" r="4"/>`));
+    pins.alarm = [290, 148];
+
+    out.push(g('quarter',
+      hand(now.hour, 25, 'k3') + hand(now.min, 40, 'k') + `<circle class="inkf" cx="${cx}" cy="${cy}" r="4"/>`));
+    pins.quarter = [182, 126];
+    return { body: out.join(''), pins };
+  }
+
+  // ---------------------------------------------------------- ¶7 floor plan
+  function doors(p) {
+    const out = [], pins = {};
+    out.push('<rect class="plate" width="480" height="320" rx="8"/>');
+    out.push('<rect class="floor" x="120" y="70" width="240" height="200"/>');
+    // Walls (centre lines x 115/365, y 65/275) with gaps for three doors and a window.
+    out.push(stroke('M110,65 H216 M256,65 H370 M115,60 V180 M115,220 V280 M365,60 V150 M365,190 V280 M110,275 H250 M330,275 H370', 'wall'));
+    out.push(stroke('M250,271 H330 M250,279 H330', 'k1') + '<text class="lbl small" x="290" y="300" text-anchor="middle">window</text>');
+
+    const door = (x1, y1, x2, y2, arc) => stroke(`M${x1},${y1} L${x2},${y2}`, 'door') + stroke(arc, 'k1 soft dash');
+    const lock = (x, y) => `<circle class="ochre k k1" cx="${x}" cy="${y}" r="5"/>` + stroke(`M${x},${y + 1} v5`, 'k1');
+    const person = (x, y, letter, name, tx, ty, anchor) =>
+      `<circle class="facef k" cx="${x}" cy="${y}" r="14"/><text class="lbl" x="${x}" y="${y + 5}" text-anchor="middle">${letter}</text>` +
+      `<text class="lbl small" x="${tx}" y="${ty}" text-anchor="${anchor}">${name}</text>`;
+
+    out.push(g('bed',
+      '<rect class="linen k" x="138" y="80" width="66" height="122" rx="5"/>' +
+      '<rect class="w1 k k1" x="146" y="86" width="50" height="18" rx="6"/>' +
+      '<ellipse class="belly k" cx="171" cy="146" rx="21" ry="32"/>' +
+      stroke('M152,134 H190 M151,146 H191 M152,158 H190 M155,170 H187', 'k1') +
+      '<circle class="shell k k1" cx="171" cy="110" r="7"/>' +
+      stroke('M150,128 l-8,-4 M149,142 l-9,0 M150,156 l-8,4 M192,128 l8,-4 M193,142 l9,0 M192,156 l8,4', 'k1') +
+      '<rect class="blanket k k1" x="140" y="168" width="62" height="32" rx="4"/>'));
+    pins.bed = [212, 196];
+
+    out.push(g('mother',
+      door(216, 65, 256, 65, 'M216,65 A40,40 0 0 0 256,105') + lock(250, 76) +
+      person(236, 30, 'M', 'Mother', 258, 26, 'start') +
+      stroke('M226,48 q10,5 20,0', 'k1')));
+    pins.mother = [306, 40];
+
+    out.push(g('father',
+      door(115, 180, 115, 220, 'M115,180 A40,40 0 0 1 155,220') + lock(126, 214) +
+      person(70, 200, 'F', 'Father', 70, 234, 'middle') +
+      stroke('M90,190 q8,10 0,20 M98,186 q10,14 0,28', 'k3')));
+    pins.father = [40, 168];
+
+    out.push(g('sister',
+      door(365, 150, 365, 190, 'M365,150 A40,40 0 0 0 325,190') + lock(354, 184) +
+      person(410, 170, 'S', 'Sister', 410, 204, 'middle') +
+      stroke('M390,162 q-6,8 0,16 M383,158 q-8,12 0,24', 'k1 dash')));
+    pins.sister = [446, 140];
+
+    out.push(g('locked',
+      '<rect class="ochre k k1" x="296" y="216" width="22" height="16" rx="3"/>' + stroke('M300,216 v-6 a7,7 0 0 1 14,0 v6', 'k1') +
+      '<text class="lbl small" x="307" y="252" text-anchor="middle">all locked</text>'));
+    pins.locked = [334, 208];
+    return { body: out.join(''), pins };
+  }
+
+  const SCENES = { bed, room, window: windowScene, desk, clock, doors };
+
+  function pin(x, y, num, key) {
+    return `<g class="pin" data-k="${key}"><circle class="pin-c" cx="${n(x)}" cy="${n(y)}" r="11"/>` +
+      `<text class="pin-t" x="${n(x)}" y="${n(y + 4.3)}" text-anchor="middle">${num}</text></g>`;
+  }
+
+  function render(spec) {
+    const scene = SCENES[spec.scene];
+    if (!scene) throw new Error('unknown scene ' + spec.scene);
+    const r = rng(hash(spec.id + ':' + spec.scene));
+    const { defs = '', body, pins } = scene(spec.params || {}, r, 'art-' + spec.id);
+    const marks = spec.elements.map(e => {
+      const at = pins[e.key];
+      if (!at) throw new Error(`scene ${spec.scene} has no element ${e.key}`);
+      return pin(at[0], at[1], e.n, e.key);
+    }).join('');
+    return `<svg class="art" viewBox="0 0 480 320" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${esc(spec.title)}">` +
+      (defs ? `<defs>${defs}</defs>` : '') + body + `<g class="pins">${marks}</g></svg>`;
+  }
+
+  function fingerprint(spec) { return hash(render(spec)).toString(16).padStart(8, '0'); }
+
+  return { render, fingerprint, hash, scenes: Object.keys(SCENES) };
+})();
+if (typeof module !== 'undefined') module.exports = Art;
+
+</script>
+<script>
+/* Reader: pagination, picture placement, Illustrate, Explain, gestures.
+   Nothing here is random or time-based: for a given screen size and text size the
+   same taps always produce the same pages. */
+(() => {
+  'use strict';
+  const D = JSON.parse(document.getElementById('reader-data').textContent);
+  const $ = id => document.getElementById(id);
+  const root = document.documentElement;
+  const app = $('app'), frame = $('frame'), flow = $('flow');
+  const illusBtn = $('illus'), illusLabel = $('illusLabel'), pageBtn = $('pageno');
+  const explainBtn = $('explainBtn'), toastEl = $('toast'), menu = $('menu'), sheet = $('sheet');
+
+  const PARA = {}, FIG = {};
+  D.paragraphs.forEach(p => { PARA[p.id] = p; });
+  D.figures.forEach(f => { FIG[f.id] = f; });
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const store = {
+    get(k) { try { return localStorage.getItem('mi.' + k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem('mi.' + k, v); } catch (e) { /* storage blocked */ } },
+  };
+  const S = {
+    page: 0, pages: 1, W: 0, H: 0, G: 48, step: 48, fs: 18,
+    active: new Set(), map: {}, sel: null, grounded: null, busy: false, booted: false,
+    fmt: store.get('fmt') === 'pct' ? 'pct' : 'pages',
+  };
+  const sleep = ms => new Promise(res => setTimeout(res, ms));
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  // ------------------------------------------------------------ text -> DOM
+  function sentenceHTML(p, si) {
+    const s = p.sentences[si];
+    let pos = s.a, out = '';
+    for (const ph of p.phrases) {
+      if (ph.s !== si) continue;
+      out += esc(p.text.slice(pos, ph.a)) +
+        `<span class="ph" data-f="${ph.f}" data-k="${ph.key}" data-n="${ph.n}">${esc(p.text.slice(ph.a, ph.b))}</span>`;
+      pos = ph.b;
+    }
+    return `<span class="s" data-s="${si}">${out}${esc(p.text.slice(pos, s.b))}</span>`;
+  }
+  function paraEl(p, from, to, cls) {
+    const el = document.createElement('p');
+    el.className = 'para' + (cls ? ' ' + cls : '');
+    el.dataset.p = p.id;
+    let html = '';
+    for (let si = from; si <= to; si++) {
+      if (si > from) html += p.text.slice(p.sentences[si - 1].b, p.sentences[si].a);
+      html += sentenceHTML(p, si);
+    }
+    el.innerHTML = html;
+    return el;
+  }
+  // Title page. The vignette is a door, not the insect: in 1915 Kafka asked his
+  // publisher not to draw the insect on the cover.
+  const DOOR = '<svg class="art cover-art" viewBox="0 0 200 240" aria-hidden="true">' +
+    '<path class="ochre" opacity=".45" d="M128,222 L140,222 L182,238 L150,238 Z"/>' +
+    '<rect class="wood k" x="50" y="26" width="100" height="196" rx="2"/>' +
+    '<rect class="ochre k k1" x="60" y="36" width="80" height="186"/>' +
+    '<path class="wood2 k" d="M60,36 L128,46 L128,214 L60,222 Z"/>' +
+    '<path class="k n k1" d="M72,58 L116,63 L116,118 L72,116 Z M72,134 L116,135 L116,196 L72,201 Z"/>' +
+    '<circle class="ochre k k1" cx="120" cy="128" r="4"/><path class="k n k1" d="M120,137 v6"/>' +
+    '<path class="k n k1" d="M20,222 H180"/></svg>';
+  const titlePage = () => `<section class="titlepage" style="height:${S.H}px">${DOOR}` +
+    `<div class="bk">${esc(D.meta.title)}</div><div class="au">${esc(D.meta.author)}</div>` +
+    `<div class="tr">translated by ${esc(D.meta.translator)}</div>` +
+    `<div class="part">Part ${esc(D.meta.part)}</div>` +
+    '<p class="how">Swipe or tap the right edge to start reading. Tap <b>Illustrate</b> to picture every page. ' +
+    'Tap a paragraph to explain it.</p></section>';
+  const ENDING = `<div class="endmark"><p>End of the excerpt (${esc(D.meta.excerpt)}).</p>` +
+    '<p>Tap Illustrate to picture every page. Tap the top of the page for the menu: text size, night mode, How it works, Credits.</p></div>';
+
+  function renderBase() {
+    flow.innerHTML = titlePage();
+    for (const p of D.paragraphs) flow.appendChild(paraEl(p, 0, p.sentences.length - 1));
+    flow.insertAdjacentHTML('beforeend', ENDING);
+  }
+
+  // ------------------------------------------------------------- geometry
+  function measure() {
+    root.style.setProperty('--fs', S.fs + 'px');
+    const vw = window.innerWidth;
+    const side = Math.max(18, Math.round(vw * 0.055));
+    const W = Math.floor(Math.min(vw - 2 * side, S.fs * 34));
+    frame.style.left = Math.floor((vw - W) / 2) + 'px';
+    frame.style.width = W + 'px';
+    const H = Math.floor(frame.getBoundingClientRect().height);
+    S.W = W; S.H = H; S.step = W + S.G;
+    Object.assign(flow.style, { width: W + 'px', height: H + 'px', columnWidth: W + 'px', columnGap: S.G + 'px', transform: 'none' });
+  }
+  const origin = () => flow.getBoundingClientRect();
+  const pageAt = (left, o) => Math.floor((left - o.left + 1) / S.step);
+  function pagesOf(el, o = origin()) {
+    const set = new Set();
+    for (const r of el.getClientRects()) if (r.width > 0 || r.height > 0) set.add(pageAt(r.left, o));
+    return [...set].sort((a, b) => a - b);
+  }
+  const anchorEl = f => flow.querySelector(`.ph[data-f="${f.id}"][data-k="${f.anchor}"]`);
+  const figEl = id => flow.querySelector(`figure[data-f="${id}"]`);
+
+  // -------------------------------------------------------------- pictures
+  const svgCache = {};
+  const svgFor = f => svgCache[f.id] || (svgCache[f.id] = Art.render(f));
+  const CAP = 24, PAD = 14;
+
+  function makeFigure(f, h) {
+    const el = document.createElement('figure');
+    el.className = 'fig' + (f.imagined ? ' imagined' : '');
+    el.dataset.f = f.id;
+    el.style.height = h + 'px';
+    el.innerHTML = `<div class="art-wrap" style="height:${h - CAP - PAD}px">${svgFor(f)}</div>` +
+      `<figcaption><span class="ttl">${esc(f.title)}</span><span class="tag">¶${PARA[f.p].n}</span></figcaption>`;
+    return el;
+  }
+  function figureHeights() {
+    const natural = Math.floor(S.W * 320 / 480) + CAP + PAD;
+    const cap = Math.floor(S.H * (S.H > S.W * 1.15 ? 0.42 : 0.62));
+    const max = Math.min(natural, cap);
+    // Smallest size still leaves a drawing at least 120px tall.
+    return { max, min: Math.max(120 + CAP + PAD, Math.floor(max * 0.5)) };
+  }
+
+  // Pictures always come after the text they show. tryPlace puts one at a candidate spot
+  // after the anchor sentence and measures it; it returns null (DOM restored) unless the
+  // picture is whole and on the page where its anchor phrase ends, or, if `next` is set,
+  // on the page right after.
+  function tryPlace(f, cand, h, next) {
+    const pEl = flow.querySelector(`p.para[data-p="${f.p}"]`);
+    const fig = makeFigure(f, h);
+    let undo;
+    if (cand.type === 'after') { pEl.after(fig); undo = () => fig.remove(); }
+    else {
+      const p = PARA[f.p], last = p.sentences.length - 1;
+      const head = paraEl(p, 0, cand.b, '');
+      const tail = paraEl(p, cand.b + 1, last, 'cont' + (p.sentences[cand.b].q ? ' reopen' : ''));
+      pEl.replaceWith(head); head.after(fig); fig.after(tail);
+      undo = () => { fig.remove(); tail.remove(); head.replaceWith(pEl); };
+    }
+    const o = origin(), r = fig.getBoundingClientRect();
+    const whole = Math.abs(r.height - h) < 2 && r.top >= o.top - 1 && r.bottom <= o.top + S.H + 1;
+    const figPage = pageAt(r.left, o);
+    const anchorPages = pagesOf(anchorEl(f), o);
+    const ok = whole && (next ? figPage === anchorPages[anchorPages.length - 1] + 1 : anchorPages.includes(figPage));
+    if (!ok) { undo(); return null; }
+    const marks = [...flow.querySelectorAll(`.ph[data-f="${f.id}"]`)];
+    const prev = fig.previousElementSibling, pr = prev.getClientRects(), lr = pr[pr.length - 1];
+    fig.dataset.place = `${cand.type}${cand.b !== undefined ? ':' + cand.b : ''}${next ? '/nextpage' : ''}@${h}`;
+    return {
+      undo,
+      read: marks.filter(m => m.compareDocumentPosition(fig) & Node.DOCUMENT_POSITION_FOLLOWING).length / marks.length,
+      here: marks.filter(m => pagesOf(m, o).includes(figPage)).length / marks.length,
+      gap: pageAt(lr.left, o) === figPage - 1 ? Math.max(0, o.top + S.H - lr.bottom) : 0,
+    };
+  }
+
+  function placeFigure(f) {
+    const { max, min } = figureHeights();
+    const p = PARA[f.p], last = p.sentences.length - 1, k = f.anchorSentence;
+    const lastQuoted = Math.max(...p.phrases.filter(ph => ph.f === f.id).map(ph => ph.s));
+    const spots = upTo => {
+      const list = [];
+      for (let b = k; b <= Math.min(upTo, last - 1); b++) list.push({ type: 'split', b, bonus: p.sentences[b].q ? -0.05 : 0 });
+      list.push({ type: 'after', b: undefined, bonus: 0.1 });
+      return list;
+    };
+    const pick = (cands, sizes, next, score, perfect) => {
+      let best = null;
+      for (const h of sizes) {
+        for (const c of cands) {
+          const t = tryPlace(f, c, h, next);
+          if (!t) continue;
+          t.undo();
+          const sc = score(t, c, h);
+          if (!best || sc > best.sc + 1e-9) best = { c, h, sc };
+          if (perfect(t, h)) return best;
+        }
+      }
+      return best;
+    };
+    // Same page as the anchor: after the anchor sentence, after a later sentence the
+    // picture quotes, or after the paragraph. Details already read and visible count
+    // most, then size, then not splitting the paragraph.
+    const sizes = [...new Set([max, Math.round(max * 0.8), Math.round(max * 0.62), min].map(h => Math.max(min, h)))];
+    let best = pick(spots(lastQuoted), sizes, false,
+      (t, c, h) => 1.5 * t.here + t.read + h / max + c.bonus,
+      (t, h) => t.here === 1 && t.read === 1 && h === max);
+    let next = false;
+    // No room left on that page: like a printed book, the picture goes at the first
+    // sentence break on the next page, so it still directly follows its text.
+    if (!best) {
+      next = true;
+      best = pick(spots(last), [max], true,
+        (t, c) => -1.2 * t.gap / S.H - 0.05 * ((c.b === undefined ? last : c.b) - k),
+        t => t.gap < 2);
+    }
+    if (best && tryPlace(f, best.c, best.h, next)) return true;
+    // Should never happen. Keep the picture visible and let the self-test flag it.
+    const fig = makeFigure(f, min);
+    fig.dataset.place = 'fallback';
+    flow.querySelector(`p.para[data-p="${f.p}"]`).after(fig);
+    return false;
+  }
+
+  function paginate() {
+    const o = origin();
+    const lastRects = flow.lastElementChild.getClientRects();
+    S.pages = pageAt(lastRects[lastRects.length - 1].left, o) + 1;
+    S.map = {};
+    for (const f of D.figures) {
+      const fe = figEl(f.id);
+      S.map[f.id] = { anchor: pagesOf(anchorEl(f), o), fig: fe ? pageAt(fe.getBoundingClientRect().left, o) : null };
+    }
+  }
+
+  function layout(keep) {
+    clearSel();
+    const grounded = S.grounded;
+    S.grounded = null;
+    measure();
+    renderBase();
+    for (const f of D.figures) if (S.active.has(f.id)) placeFigure(f);
+    paginate();
+    let page = 0;
+    if (keep) {
+      const s = flow.querySelector(`.para[data-p="${keep.p}"] .s[data-s="${keep.s}"]`);
+      if (s) page = pagesOf(s)[0] || 0;
+    }
+    goTo(page);
+    if (grounded && S.active.has(grounded)) { S.grounded = grounded; applyGround(); }
+  }
+
+  function firstVisible() {
+    const o = origin();
+    for (const s of flow.querySelectorAll('.s')) {
+      for (const r of s.getClientRects()) if (pageAt(r.left, o) === S.page) return { p: s.closest('.para').dataset.p, s: +s.dataset.s };
+    }
+    return null;
+  }
+
+  // ------------------------------------------------------------ navigation
+  function goTo(i) {
+    S.page = Math.max(0, Math.min(S.pages - 1, i));
+    flow.style.transform = `translateX(${-S.page * S.step}px)`;
+    updateFooter();
+  }
+  function turn(d) {
+    clearSel(); clearGround();
+    if (!menu.hidden) closeMenu();
+    goTo(S.page + d);
+  }
+  function updateFooter() {
+    pageBtn.textContent = S.fmt === 'pct'
+      ? (100 * (S.page + 1) / S.pages).toFixed(1) + '%'
+      : `${S.page + 1} / ${S.pages}`;
+    if (!S.busy) illusLabel.textContent = S.active.size ? 'Hide pictures' : 'Illustrate';
+  }
+
+  // ------------------------------------------------------------ Illustrate
+  // One tap pictures the whole excerpt; the next tap hides every picture. The reader
+  // stays on the text they were reading.
+  async function illustrate(opts = {}) {
+    if (S.busy) return;
+    clearSel(); clearGround();
+    if (S.active.size) {
+      const keep = firstVisible();
+      S.active = new Set();
+      layout(keep);
+      toast('Pictures hidden.');
+      return;
+    }
+    const quick = opts.instant || reducedMotion;
+    S.busy = true;
+    illusBtn.classList.add('working');
+    illusLabel.textContent = 'Reading';
+    toast(`Reading all ${D.paragraphs.length} paragraphs…`, 0);
+    // Show the work on the page being read: highlight the words pictures are drawn from.
+    const o = origin();
+    const marks = [...flow.querySelectorAll('.ph')].filter(el => pagesOf(el, o).includes(S.page));
+    for (const el of marks) { el.classList.add('scan'); if (!quick) await sleep(90); }
+    toast(`Found ${D.figures.length} scenes: ${D.figures.map(f => f.title).join(' · ')}`, 0);
+    if (!quick) await sleep(900);
+    const keep = firstVisible();
+    D.figures.forEach(f => S.active.add(f.id));
+    S.busy = false;
+    illusBtn.classList.remove('working');
+    layout(keep);
+    const ahead = D.figures.map(f => S.map[f.id].fig).filter(pg => pg > S.page);
+    const here = D.figures.some(f => S.map[f.id].fig === S.page);
+    toast(`${D.figures.length} pictures added across the excerpt. ` + (here || !ahead.length
+      ? 'Tap one to see the words it’s drawn from.'
+      : `The next one is on page ${Math.min(...ahead) + 1}.`), 5000);
+  }
+
+  function setAll(on) {
+    const keep = firstVisible();
+    S.active = new Set(on ? D.figures.map(f => f.id) : []);
+    layout(keep);
+    toast(on ? `${D.figures.length} pictures placed across the excerpt.` : 'All pictures removed.');
+  }
+
+  // --------------------------------------------------------------- Explain
+  function select(pid, x, y) {
+    clearSel(); clearGround();
+    S.sel = pid;
+    flow.querySelectorAll(`.para[data-p="${pid}"]`).forEach(el => el.classList.add('sel'));
+    explainBtn.textContent = `Explain ¶${PARA[pid].n}`;
+    explainBtn.hidden = false;
+    const bw = explainBtn.offsetWidth, bh = explainBtn.offsetHeight;
+    let top = y - bh - 26;
+    if (top < 12) top = y + 28;
+    const left = Math.max(12, Math.min(window.innerWidth - bw - 12, Math.round(x - bw / 2)));
+    explainBtn.style.left = left + 'px';
+    explainBtn.style.top = Math.round(top) + 'px';
+  }
+  function clearSel() {
+    explainBtn.hidden = true;
+    if (!S.sel) return;
+    flow.querySelectorAll('.para.sel').forEach(el => el.classList.remove('sel'));
+    S.sel = null;
+  }
+  const refs = t => esc(t).replace(/¶(\d+)/g, (m, d) => `<button type="button" class="pref" data-goto="p${d}">¶${d}</button>`);
+
+  function openExplain(pid) {
+    const e = D.explain[pid], p = PARA[pid];
+    const fig = D.figures.find(f => f.p === pid);
+    let html = `<section><h3>In plain words</h3><p>${refs(e.gist)}</p></section>` +
+      `<section><h3>Context so far</h3><ul>${e.context.map(c => `<li>${refs(c)}</li>`).join('')}</ul></section>` +
+      `<section><h3>Words</h3><dl>${e.terms.map(([t, d]) => `<dt>${esc(t)}</dt><dd>${refs(d)}</dd>`).join('')}</dl></section>` +
+      `<section><h3>Why it matters</h3><p>${refs(e.why)}</p></section>`;
+    if (fig) html += `<p class="figlink"><button type="button" class="kbtn" data-show="${fig.id}">Show the picture for ¶${p.n}</button></p>`;
+    openSheet(`Explain ¶${p.n}`, html, p.n === 1 ? 'Uses only ¶1. No spoilers.' : `Uses only ¶1–¶${p.n}. No spoilers.`);
+  }
+
+  function showPara(pid) {
+    closeSheet();
+    const el = flow.querySelector(`.para[data-p="${pid}"]`);
+    if (!el) return;
+    goTo(pagesOf(el)[0]);
+    const all = flow.querySelectorAll(`.para[data-p="${pid}"]`);
+    all.forEach(x => x.classList.add('flash'));
+    setTimeout(() => all.forEach(x => x.classList.remove('flash')), 1600);
+  }
+  function showFigure(fid) {
+    closeSheet();
+    if (!S.active.has(fid)) { D.figures.forEach(f => S.active.add(f.id)); layout(firstVisible()); }
+    goTo(S.map[fid].fig);
+    toggleGround(fid);
+  }
+
+  // ------------------------------------------- grounding (numbered phrases)
+  function toggleGround(fid) {
+    const same = S.grounded === fid;
+    clearSel(); clearGround();
+    if (same) return;
+    S.grounded = fid;
+    applyGround();
+  }
+  function applyGround() {
+    const fid = S.grounded, fe = figEl(fid);
+    if (!fe) { S.grounded = null; return; }
+    fe.classList.add('grounded');
+    const o = origin(), pg = S.map[fid].fig;
+    const marks = flow.querySelectorAll(`.ph[data-f="${fid}"]`);
+    let here = 0;
+    marks.forEach(m => { m.classList.add('on'); if (pagesOf(m, o).includes(pg)) here++; });
+    fe.querySelector('.tag').textContent = here === marks.length
+      ? `${marks.length} details, numbered in the text`
+      : `${here} of ${marks.length} details on this page`;
+  }
+  function clearGround() {
+    if (!S.grounded) return;
+    const fe = figEl(S.grounded);
+    if (fe) { fe.classList.remove('grounded'); fe.querySelector('.tag').textContent = `¶${PARA[FIG[S.grounded].p].n}`; }
+    flow.querySelectorAll('.ph.on').forEach(m => m.classList.remove('on'));
+    S.grounded = null;
+  }
+
+  // ------------------------------------------------------- toast / sheets
+  let toastTimer = 0;
+  function toast(msg, ms = 4200) {
+    toastEl.textContent = msg;
+    toastEl.hidden = false;
+    clearTimeout(toastTimer);
+    if (ms) toastTimer = setTimeout(() => { toastEl.hidden = true; }, ms);
+  }
+  let lastFocus = null;
+  function openSheet(title, html, note) {
+    closeMenu();
+    lastFocus = document.activeElement;
+    $('sheetTitle').textContent = title;
+    $('sheetBody').innerHTML = html;
+    $('sheetBody').scrollTop = 0;
+    $('sheetNote').textContent = note || '';
+    sheet.hidden = false;
+    $('sheetClose').focus({ preventScroll: true });
+  }
+  function closeSheet() {
+    if (sheet.hidden) return;
+    sheet.hidden = true;
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  }
+  function openMenu() { clearSel(); clearGround(); menu.hidden = false; }
+  function closeMenu() { menu.hidden = true; }
+
+  function howItWorks() {
+    const checks = D.figures.map(f => {
+      const fp = Art.fingerprint(f), ok = fp === D.fingerprints[f.id];
+      return { f, fp, ok };
+    });
+    const good = checks.filter(c => c.ok).length;
+    openSheet('How it works', `
+      <section><h3>When you tap Illustrate</h3><ol>
+        <li><b>Read.</b> The app looks up the scene specs for the whole excerpt and, on the page you are on, highlights the words each picture is drawn from.</li>
+        <li><b>Draw.</b> A small SVG engine in this page draws each spec. No image model runs while you read.</li>
+        <li><b>Place.</b> A layout pass puts every picture on the same page as the sentence it shows, and redoes it whenever the screen or text size changes.</li>
+      </ol></section>
+      <section><h3>Left without pictures</h3><ul>${Object.values(D.skips).map(r => `<li>${refs(r)}</li>`).join('')}</ul></section>
+      <section><h3>Where the AI comes in</h3>
+        <p>An AI reads each passage once, when the book is added. For every scene it writes a spec: what to draw, with each element tied to an exact phrase. It also writes a spoiler-safe explanation for each paragraph. A build step rejects any spec whose quotes don’t match the text word for word, and any explanation that points ahead.</p></section>
+      <section><h3>Why deterministic</h3><ul>
+        <li>Every reader sees the same picture, so people can talk about the same image.</li>
+        <li>No AI cost and no waiting on a page turn.</li>
+        <li>Specs are small text files a person can review and correct once, for everyone.</li>
+      </ul></section>
+      <section><h3>Checked on this device</h3>
+        <p><span class="ok">${good} of ${checks.length}</span> pictures match the reference fingerprints byte for byte.</p>
+        <p class="mono">${checks.map(c => `${c.f.id} ${c.fp} ${c.ok ? '✓' : '✗'}`).join(' · ')}</p></section>`,
+      `${D.figures.length} pictures · ${D.paragraphs.length} explanations · no AI calls while reading`);
+  }
+  function credits() {
+    openSheet('Credits', `
+      <section><h3>Text</h3>
+        <p>Franz Kafka, <i>Die Verwandlung</i> (1915), Part I, paragraphs 1 to 9. English translation by David Wyllie, from Project Gutenberg eBook #5200, where it is a copyrighted eBook distributed with the translator’s permission.</p>
+        <p>“This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever. You may copy it, give it away or re-use it under the terms of the Project Gutenberg License included with this eBook or online at www.gutenberg.org.”</p>
+        <p><a href="https://www.gutenberg.org/policy/license.html" target="_blank" rel="noopener">Read the Project Gutenberg License</a></p></section>
+      <section><h3>Pictures and explanations</h3>
+        <p>Pictures are drawn by code in this page from scene specs. Explanations were written for this excerpt and only refer back, never ahead.</p>
+        <p>The title page shows a door rather than the insect: in 1915 Kafka asked his publisher not to draw the insect on the cover.</p></section>
+      <section><h3>Reading view</h3>
+        <p>Modelled on a tuned <a href="https://koreader.rocks" target="_blank" rel="noopener">KOReader</a> setup. Fonts: Literata and Charis SIL for text, Noto Sans for controls (SIL Open Font License).</p></section>
+      <section><h3>About</h3><p>A concept prototype. Not affiliated with any company.</p></section>`, '');
+  }
+
+  // ------------------------------------------------------------- gestures
+  let ptr = null, lpTimer = 0;
+  frame.addEventListener('contextmenu', e => e.preventDefault());
+  app.addEventListener('pointerdown', e => {
+    if (e.target.closest('.ui') || e.button > 0) return;
+    ptr = { x: e.clientX, y: e.clientY, long: false };
+    clearTimeout(lpTimer);
+    lpTimer = setTimeout(() => { if (ptr) { ptr.long = true; longPress(ptr.x, ptr.y); } }, 480);
+  });
+  app.addEventListener('pointermove', e => {
+    if (ptr && Math.hypot(e.clientX - ptr.x, e.clientY - ptr.y) > 12) clearTimeout(lpTimer);
+  });
+  app.addEventListener('pointerup', e => {
+    if (!ptr) return;
+    clearTimeout(lpTimer);
+    const p = ptr; ptr = null;
+    if (p.long) return;
+    const dx = e.clientX - p.x, dy = e.clientY - p.y;
+    if (Math.max(Math.abs(dx), Math.abs(dy)) > 45) {
+      if (Math.abs(dx) > Math.abs(dy)) turn(dx < 0 ? 1 : -1); else turn(dy < 0 ? 1 : -1);
+      return;
+    }
+    tap(p.x, p.y, document.elementFromPoint(p.x, p.y) || app);
+  });
+  app.addEventListener('pointercancel', () => { ptr = null; clearTimeout(lpTimer); });
+
+  function tap(x, y, target) {
+    if (!menu.hidden) { closeMenu(); return; }
+    const fig = target.closest('.fig');
+    if (fig) { toggleGround(fig.dataset.f); return; }
+    if (S.sel || S.grounded) { clearSel(); clearGround(); return; }
+    const vw = window.innerWidth, vh = window.innerHeight;
+    if (y < vh * 0.08) { openMenu(); return; }
+    if (x < vw * 0.22) { turn(-1); return; }
+    if (x > vw * 0.78) { turn(1); return; }
+    const p = target.closest('.para');
+    if (p) select(p.dataset.p, x, y);
+  }
+  function longPress(x, y) {
+    const t = document.elementFromPoint(x, y);
+    if (!t) return;
+    const fig = t.closest('.fig');
+    if (fig) { toggleGround(fig.dataset.f); return; }
+    const p = t.closest('.para');
+    if (p) select(p.dataset.p, x, y);
+  }
+
+  let wheelAt = 0;
+  app.addEventListener('wheel', e => {
+    if (!sheet.hidden || Math.abs(e.deltaY) < 4) return;
+    const now = performance.now();
+    if (now - wheelAt < 280) return;
+    wheelAt = now;
+    turn(e.deltaY > 0 ? 1 : -1);
+  }, { passive: true });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { if (!sheet.hidden) closeSheet(); else { closeMenu(); clearSel(); clearGround(); } return; }
+    if (!sheet.hidden || (e.target.closest && e.target.closest('#menu'))) return;
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); turn(1); }
+    else if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); turn(-1); }
+    else if (e.key === 'i' || e.key === 'I') illustrate();
+    else if (e.key === 'm' || e.key === 'M') menu.hidden ? openMenu() : closeMenu();
+  });
+
+  illusBtn.addEventListener('click', () => illustrate());
+  pageBtn.addEventListener('click', () => { S.fmt = S.fmt === 'pct' ? 'pages' : 'pct'; store.set('fmt', S.fmt); updateFooter(); });
+  explainBtn.addEventListener('click', () => { if (S.sel) { const pid = S.sel; clearSel(); openExplain(pid); } });
+  toastEl.addEventListener('click', () => { toastEl.hidden = true; });
+  $('sheetX').addEventListener('click', closeSheet);
+  $('sheetClose').addEventListener('click', closeSheet);
+  sheet.addEventListener('click', e => {
+    if (e.target === sheet) { closeSheet(); return; }
+    const go = e.target.closest('[data-goto]');
+    if (go) { showPara(go.dataset.goto); return; }
+    const show = e.target.closest('[data-show]');
+    if (show) showFigure(show.dataset.show);
+  });
+  menu.addEventListener('click', e => {
+    const b = e.target.closest('button[data-act]');
+    if (!b) return;
+    const act = b.dataset.act;
+    if (act === 'smaller' || act === 'bigger') {
+      S.fs = Math.max(14, Math.min(30, S.fs + (act === 'bigger' ? 1 : -1)));
+      store.set('fs', S.fs);
+      layout(firstVisible());
+    } else if (act === 'night') {
+      const dark = getComputedStyle(root).colorScheme.includes('dark');
+      root.dataset.theme = dark ? 'light' : 'dark';
+      store.set('theme', root.dataset.theme);
+    } else if (act === 'how') howItWorks();
+    else if (act === 'credits') credits();
+  });
+
+  let resizeTimer = 0;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => { if (S.booted) layout(firstVisible()); }, 150);
+  });
+
+  // ------------------------------------------------------------ self-tests
+  // readerSelfTest(): place every picture, then check alignment, clipping, overlap,
+  // layout determinism and SVG fingerprints. readerButtonTest(): with no pictures,
+  // one Illustrate tap must place them all and keep the reading position; the next
+  // tap must hide them.
+  function audit() {
+    const o = origin(), rep = { viewport: [window.innerWidth, window.innerHeight], fontSize: S.fs, column: [S.W, S.H], pages: S.pages, figures: [], problems: [] };
+    const figRects = [];
+    for (const f of D.figures) {
+      const fe = figEl(f.id);
+      if (!fe) continue;
+      const m = S.map[f.id], r = fe.getBoundingClientRect();
+      const aligned = m.anchor.includes(m.fig);
+      const nextPage = m.fig === m.anchor[m.anchor.length - 1] + 1;
+      const follows = !!(anchorEl(f).compareDocumentPosition(fe) & Node.DOCUMENT_POSITION_FOLLOWING);
+      const whole = r.top >= o.top - 1 && r.bottom <= o.top + S.H + 1;
+      const marks = [...flow.querySelectorAll(`.ph[data-f="${f.id}"]`)];
+      const here = marks.filter(x => pagesOf(x, o).includes(m.fig)).length;
+      const read = marks.filter(x => x.compareDocumentPosition(fe) & Node.DOCUMENT_POSITION_FOLLOWING).length;
+      const svg = fe.querySelector('svg').getBoundingClientRect();
+      const prev = fe.previousElementSibling, pr = prev ? prev.getClientRects() : [], lr = pr[pr.length - 1];
+      const gap = lr && pageAt(lr.left, o) === m.fig - 1 ? Math.round(o.top + S.H - lr.bottom) : 0;
+      rep.figures.push({ id: f.id, p: f.p, page: m.fig + 1, anchorPages: m.anchor.map(x => x + 1), place: fe.dataset.place, gap, height: Math.round(r.height), svg: [Math.round(svg.width), Math.round(svg.height)], aligned, nextPage, follows, whole, detailsOnPage: `${here}/${marks.length}`, detailsRead: `${read}/${marks.length}` });
+      if (!follows) rep.problems.push(`${f.id} comes before the text it shows`);
+      if (!aligned && !nextPage) rep.problems.push(`${f.id} is not on (or right after) the page of its anchor phrase`);
+      if (!whole) rep.problems.push(`${f.id} is cut by a page edge`);
+      if (svg.width < 40 || svg.height < 40) rep.problems.push(`${f.id} drawing is too small`);
+      figRects.push([f.id, svg], [f.id, fe.querySelector('figcaption').getBoundingClientRect()]);
+    }
+    for (const s of flow.querySelectorAll('.s')) {
+      for (const r of s.getClientRects()) {
+        for (const [id, fr] of figRects) {
+          if (r.left < fr.right - 1 && fr.left < r.right - 1 && r.top < fr.bottom - 1 && fr.top < r.bottom - 1) rep.problems.push(`text overlaps ${id}`);
+        }
+        if (r.bottom > o.top + S.H + 1) rep.problems.push('a line runs below the page');
+      }
+    }
+    return rep;
+  }
+  window.readerSelfTest = function () {
+    const before = new Set(S.active), keep = firstVisible();
+    S.active = new Set(D.figures.map(f => f.id));
+    layout(null);
+    const rep = audit();
+    const html = flow.innerHTML;
+    const t0 = performance.now();
+    layout(null);
+    rep.layoutMs = Math.round(performance.now() - t0);
+    rep.deterministicLayout = html === flow.innerHTML;
+    rep.fingerprints = D.figures.map(f => `${f.id}:${Art.fingerprint(f) === D.fingerprints[f.id] ? 'match' : 'DIFFERENT'}`);
+    rep.ok = !rep.problems.length && rep.deterministicLayout && rep.fingerprints.every(x => x.endsWith(':match')) && rep.figures.length === D.figures.length;
+    S.active = before;
+    layout(keep);
+    return rep;
+  };
+  window.readerButtonTest = async function () {
+    const before = new Set(S.active), keep0 = firstVisible();
+    const steps = [], problems = [];
+    let rep = null;
+    for (const start of [0, Math.floor(S.pages / 2)]) {
+      S.active = new Set();
+      layout(null);
+      goTo(start);
+      const keep = firstVisible();
+      await illustrate({ instant: true });
+      const s = keep && flow.querySelector(`.para[data-p="${keep.p}"] .s[data-s="${keep.s}"]`);
+      const stayed = s ? pagesOf(s).includes(S.page) : S.page === start;
+      steps.push(`tap on page ${start + 1}: ${S.active.size} pictures, kept place ${stayed ? 'yes' : 'NO'}`);
+      if (S.active.size !== D.figures.length) problems.push(`one tap on page ${start + 1} placed ${S.active.size} pictures`);
+      if (!stayed) problems.push(`tap on page ${start + 1} lost the reading position`);
+      rep = rep || audit();
+      await illustrate({ instant: true });
+      if (S.active.size) problems.push('second tap did not hide the pictures');
+    }
+    rep.steps = steps;
+    rep.problems.push(...problems);
+    rep.ok = !rep.problems.length;
+    toastEl.hidden = true;
+    S.active = before;
+    layout(keep0);
+    return rep;
+  };
+
+  // Small handle for the test harness (tests/run.mjs) and for poking at it in devtools.
+  window.reader = {
+    goTo, illustrate, setAll, openExplain, toggleGround, closeSheet,
+    state: () => ({ page: S.page, pages: S.pages, active: [...S.active], fs: S.fs, map: S.map }),
+    selectPara(pid) {
+      const el = flow.querySelector(`.para[data-p="${pid}"]`);
+      goTo(pagesOf(el)[0]);
+      const r = [...el.getClientRects()].find(x => pageAt(x.left, origin()) === S.page) || el.getClientRects()[0];
+      select(pid, r.left + r.width / 2, r.top + Math.min(r.height / 2, 40));
+    },
+  };
+
+  // ------------------------------------------------------------------ boot
+  function defaultFontSize() {
+    const m = Math.min(window.innerWidth, window.innerHeight);
+    return m < 520 ? 18 : 21;
+  }
+  async function boot() {
+    const savedTheme = store.get('theme');
+    if (savedTheme === 'dark' || savedTheme === 'light') root.dataset.theme = savedTheme;
+    S.fs = Number(store.get('fs')) || defaultFontSize();
+    measure();
+    renderBase();
+    if (document.fonts && document.fonts.load) {
+      const want = [`${S.fs}px Literata`, `${S.fs}px "Charis SIL"`, `italic ${S.fs}px Literata`, `italic ${S.fs}px "Charis SIL"`, '14px "Noto Sans"', '700 14px "Noto Sans"'];
+      await Promise.race([Promise.all(want.map(w => document.fonts.load(w).catch(() => null))), sleep(2500)]);
+    }
+    layout(null);
+    S.booted = true;
+    app.classList.remove('booting');
+    if (document.fonts) document.fonts.addEventListener('loadingdone', e => {
+      if ([...e.fontfaces].some(ff => /Literata|Charis/.test(ff.family))) layout(firstVisible());
+    });
+  }
+  boot();
+})();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+{
+ "_about": "Ingest-time output: one scene spec per picture. Written once per book by the AI pass, then rendered deterministically by src/art.js. Every element must quote the text verbatim; build/build.py rejects any quote that is not found exactly once. The picture is placed after the last sentence it quotes from its own paragraph.",
+ "figures": [
+  {
+   "id": "f1",
+   "p": "p1",
+   "scene": "bed",
+   "title": "Gregor, transformed",
+   "elements": [
+    {"key": "bed", "quote": "in his bed"},
+    {"key": "back", "quote": "his armour-like back"},
+    {"key": "head", "quote": "lifted his head a little"},
+    {"key": "belly", "quote": "brown belly, slightly domed and divided by arches into stiff sections"},
+    {"key": "bedding", "quote": "The bedding was hardly able to cover it"},
+    {"key": "legs", "quote": "His many legs, pitifully thin"}
+   ],
+   "params": {"legs": 8}
+  },
+  {
+   "id": "f2",
+   "p": "p2",
+   "scene": "room",
+   "title": "His room",
+   "elements": [
+    {"key": "small", "quote": "a little too small"},
+    {"key": "walls", "quote": "four familiar walls"},
+    {"key": "samples", "quote": "textile samples lay spread out on the table"},
+    {"key": "frame", "quote": "a nice, gilded frame"},
+    {"key": "lady", "quote": "a lady fitted out with a fur hat and fur boa"},
+    {"key": "muff", "quote": "a heavy fur muff"}
+   ]
+  },
+  {
+   "id": "f3",
+   "p": "p3",
+   "scene": "window",
+   "title": "Rain on the pane",
+   "elements": [
+    {"key": "window", "quote": "look out the window"},
+    {"key": "weather", "quote": "the dull weather"},
+    {"key": "rain", "quote": "Drops of rain could be heard hitting the pane"}
+   ]
+  },
+  {
+   "id": "f4",
+   "p": "p5",
+   "scene": "desk",
+   "title": "The boss at his high desk",
+   "imagined": true,
+   "elements": [
+    {"key": "fall", "quote": "He’d fall right off his desk!"},
+    {"key": "desk", "quote": "sitting up there at your desk"},
+    {"key": "talk", "quote": "talking down at your subordinates"},
+    {"key": "close", "quote": "go right up close"},
+    {"key": "ear", "quote": "the boss is hard of hearing"}
+   ]
+  },
+  {
+   "id": "f5",
+   "p": "p6",
+   "scene": "clock",
+   "title": "Quarter to seven",
+   "elements": [
+    {"key": "clock", "quote": "the alarm clock, ticking"},
+    {"key": "chest", "quote": "the chest of drawers"},
+    {"key": "halfpast", "quote": "It was half past six"},
+    {"key": "quarter", "quote": "more like quarter to seven"},
+    {"key": "alarm", "quote": "set for four o’clock"}
+   ],
+   "params": {"earlier": "6:30", "now": "6:45", "alarm": "4:00"}
+  },
+  {
+   "id": "f6",
+   "p": "p7",
+   "scene": "doors",
+   "title": "Three doors, all locked",
+   "elements": [
+    {"key": "bed", "quote": "unable to decide to get out of the bed"},
+    {"key": "mother", "quote": "a cautious knock at the door near his head"},
+    {"key": "father", "quote": "knocking at one of the side doors, gently, but with his fist"},
+    {"key": "sister", "quote": "At the other side door his sister"},
+    {"key": "locked", "quote": "locking all doors at night"}
+   ]
+  }
+ ],
+ "skips": {
+  "p4": "¶4 is Gregor complaining about his job. The one physical detail, an itch, is too small to picture well.",
+  "p8": "¶8 is plans and excuses. Nothing happens that you could see.",
+  "p9": "¶9 is his struggle with his legs, which the picture for ¶1 already shows."
+ }
+}

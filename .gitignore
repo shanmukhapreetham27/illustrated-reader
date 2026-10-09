@@ -1,0 +1,4 @@
+tests/out/
+dist/.figures.json
+__pycache__/
+node_modules/

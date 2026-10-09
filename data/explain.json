@@ -1,0 +1,113 @@
+{
+ "_about": "Ingest-time output: one context-aware explanation per paragraph. Spoiler-safe by rule: an explanation for ¶n may only point to ¶1..¶n (build/build.py enforces it). Outside facts are limited to the author, the translation and the period.",
+ "p1": {
+  "gist": "Gregor Samsa wakes up and finds he has turned into a huge, insect-like creature. He is lying on a hard, shell-like back. When he lifts his head he can see his rounded brown belly and a lot of thin legs waving in the air.",
+  "context": [
+   "This is the first sentence of the story, and it gives away the shock at once. Kafka never explains how or why it happened. The story is about what happens next.",
+   "Kafka wrote it in late 1912. It was published in 1915."
+  ],
+  "terms": [
+   ["vermin", "Kafka’s German word is Ungeziefer: a general word for pests such as bugs or lice. Its old root meant an unclean animal unfit for sacrifice. He never names a species. The well-known Muir translation says “gigantic insect” instead."],
+   ["armour-like back", "A hard shell, like a beetle’s."]
+  ],
+  "why": "In 1915 Kafka asked his publisher not to draw the insect on the cover, not even from a distance. The picture here sticks to what this paragraph actually states: the back, the belly, the legs and the sliding bedding."
+ },
+ "p2": {
+  "gist": "Gregor asks himself what has happened, and says it is not a dream. His room looks completely normal: small and familiar, his cloth samples spread on the table, and on the wall a magazine picture of a lady in furs that he framed himself.",
+  "context": [
+   "Right after the shock of ¶1, the ordinary room is the proof that he is awake.",
+   "The samples tell us his job: he travels around selling cloth for a company."
+  ],
+  "terms": [
+   ["textile samples", "Pieces of cloth a salesman shows to customers to take orders."],
+   ["boa", "A long, thick scarf, here made of fur."],
+   ["muff", "A tube of fur you push both hands into to keep them warm."]
+  ],
+  "why": "The calm, everyday room makes the change in ¶1 feel stranger. The framed picture is one of the few things in the room that Gregor chose for himself. Some critics hear an echo of Sacher-Masoch’s 1870 novel Venus in Furs in it."
+ },
+ "p3": {
+  "gist": "The rain on the window makes him sad. He tries to go back to sleep on his right side, as he always does, but his new rounded back keeps rocking him over. After about a hundred tries he gives up, feeling a dull ache in his side he has never felt before.",
+  "context": [
+   "The “armour-like back” from ¶1 is why he can’t turn over: he rolls back like a beetle.",
+   "He still thinks like his old self. His plan is to sleep a bit more and “forget all this nonsense”."
+  ],
+  "terms": [
+   ["dull weather", "Grey and overcast."],
+   ["floundering", "Moving clumsily, struggling."]
+  ],
+  "why": "The narration stays flat and practical while something impossible is happening. That deadpan tone is a large part of Kafka’s style."
+ },
+ "p4": {
+  "gist": "Instead of panicking about his body, Gregor complains about his job: constant travel, worrying about trains, bad meals, never getting close to anyone. Then he notices an itchy patch on his belly covered in little white spots. He touches it with a leg and shudders.",
+  "context": [
+   "¶2 told us he is a travelling salesman. Here we hear how much he hates it.",
+   "He now uses one of the thin legs from ¶1 the way he used to use a hand."
+  ],
+  "terms": [
+   ["strenuous", "Exhausting."],
+   ["the curse of travelling", "The misery of always being on the road."]
+  ],
+  "why": "His job is the first thing he worries about, even now. That tells you what Gregor’s life has been like: work comes first."
+ },
+ "p5": {
+  "gist": "He imagines quitting and telling his boss exactly what he thinks, but he can’t. His parents owe the boss money, and he needs five or six more years to pay it off. Then he remembers that his train leaves at five.",
+  "context": [
+   "The debt explains the misery of ¶4: he is stuck in this job for his family.",
+   "The boss sits at a high desk and talks down to his staff. Gregor pictures him falling off it."
+  ],
+  "terms": [
+   ["copy out the contract", "Write out a clean copy of the orders he has taken."],
+   ["subordinates", "Staff who work under you."],
+   ["hard of hearing", "Partly deaf."]
+  ],
+  "why": "Gregor is paying off his parents’ debt himself. Who depends on whom in this family is a question the story keeps coming back to."
+ },
+ "p6": {
+  "gist": "He looks at the alarm clock: it is already a quarter to seven. The alarm was set for four and must have rung, but he slept through it. He has missed the five o’clock train. The next one leaves at seven and his samples aren’t even packed. He thinks about calling in sick, but the firm would send a doctor who believes nobody is ever really ill.",
+  "context": [
+   "In ¶5 he said his train leaves at five, so he is now almost two hours late.",
+   "In five years of work he has never been ill once, so a sick call would look suspicious."
+  ],
+  "terms": [
+   ["chest of drawers", "A dresser."],
+   ["office assistant", "The firm’s junior employee who waited at the station and will report him."],
+   ["medical insurance company", "The health insurer. Its doctor would check whether he is really sick."],
+   ["workshy", "Lazy, avoiding work."]
+  ],
+  "why": "Kafka himself worked at an accident insurance institute in Prague from 1908, so he knew this world of reports, doctors and suspicion from the inside."
+ },
+ "p7": {
+  "gist": "At a quarter to seven his mother knocks at the door near his head. When he answers, his voice comes out with a strange squeak in it. His father knocks at one side door and his sister calls through the other. He says he is getting up, but he keeps all the doors locked.",
+  "context": [
+   "His room has three doors, one to each part of the flat, so his family can surround him without seeing him.",
+   "Locking every door at night is a habit from staying in hotels as a travelling salesman (¶2, ¶4)."
+  ],
+  "terms": [
+   ["plaintively", "Sadly, pleadingly."],
+   ["enunciating", "Pronouncing each word very clearly."]
+  ],
+  "why": "This is his first contact with his family since the change, and nobody can see him. The locked doors buy him time and also keep him apart from them."
+ },
+ "p8": {
+  "gist": "He wants to get up calmly, get dressed and eat breakfast before deciding anything. He tells himself that the strange voice is just the start of a bad cold.",
+  "context": [
+   "This is how he explains away the squeaking voice from ¶7.",
+   "He even blames the cold on his job (¶4): it is an “occupational hazard” of travelling."
+  ],
+  "terms": [
+   ["occupational hazard", "A risk that comes with a particular job."]
+  ],
+  "why": "Gregor keeps finding ordinary explanations for something that is not ordinary. Watching him do it is both funny and sad."
+ },
+ "p9": {
+  "gist": "The covers slide off easily, but getting up is hard. He is very wide, and instead of arms he has lots of small legs that all move on their own. When he bends one, another stretches out. He decides it can’t be done in bed.",
+  "context": [
+   "The “many legs, pitifully thin” from ¶1 are now the problem: he can’t control them.",
+   "He talks to himself like a coach: “so don’t keep trying to do it”."
+  ],
+  "terms": [
+   ["exceptionally broad", "Very wide."]
+  ],
+  "why": "Kafka turns a simple action, getting out of bed, into a long struggle. The exact detail about each leg makes an impossible situation feel physical."
+ }
+}

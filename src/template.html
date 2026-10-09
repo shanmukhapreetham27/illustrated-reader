@@ -1,0 +1,52 @@
+<title>Metamorphosis, Illustrated</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&amp;family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,700;1,7..72,400&amp;family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+<style>
+/*{{CSS}}*/
+</style>
+
+<div id="app" class="booting">
+  <main id="frame"><div id="flow" lang="en"></div></main>
+
+  <footer id="foot" class="ui">
+    <button id="illus" class="kbtn" type="button" title="Picture this page (I)">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 14c1.6 0 3-.6 3.4-2.2.3-1.1-.4-2-1.4-2.1C2.6 9.6 2.2 11 2.2 12.2 2.2 13 1.6 13.6 1 14h1z" fill="currentColor"/><path d="M5.6 9.4 13.4 1.6a1.1 1.1 0 0 1 1.6 1.6L7.2 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span id="illusLabel">Illustrate</span><span class="dots" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span>
+    </button>
+    <button id="pageno" type="button" title="Switch between page number and percentage">1 / 1</button>
+  </footer>
+
+  <button id="explainBtn" class="kbtn ui" type="button" hidden>Explain</button>
+  <div id="toast" class="ui" role="status" aria-live="polite" hidden></div>
+
+  <div id="menu" class="ui" hidden>
+    <div class="mtitle"><b>Metamorphosis</b><span>Franz Kafka · Part I, ¶1–¶9</span></div>
+    <div class="mrow">
+      <button type="button" data-act="smaller" aria-label="Smaller text">A−</button>
+      <button type="button" data-act="bigger" aria-label="Bigger text">A+</button>
+      <button type="button" data-act="night" id="nightBtn">Night mode</button>
+    </div>
+    <div class="mrow">
+      <button type="button" data-act="how">How it works</button>
+      <button type="button" data-act="credits">Credits</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="sheet" class="ui" hidden>
+  <div class="win" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <header><h2 id="sheetTitle"></h2><button type="button" class="x" id="sheetX" aria-label="Close">×</button></header>
+    <div class="body" id="sheetBody"></div>
+    <footer><span class="note" id="sheetNote"></span><button type="button" class="kbtn" id="sheetClose">Close</button></footer>
+  </div>
+</div>
+
+<script type="application/json" id="reader-data">{{DATA}}</script>
+<script>
+/*{{ART}}*/
+</script>
+<script>
+/*{{READER}}*/
+</script>
