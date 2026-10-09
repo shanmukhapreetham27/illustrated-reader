@@ -3,6 +3,7 @@
 //
 //   node tests/run.mjs            all profiles, screenshots for phone + tablet
 //   node tests/run.mjs phone      one profile
+//   READER_URL=https://... node tests/run.mjs   test a deployed copy instead of index.html
 //
 // Checks per profile (see readerSelfTest / readerButtonTest in src/reader.js):
 //   - every picture is on the same page as its anchor phrase, whole, never overlapping text
@@ -16,7 +17,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const PAGE = pathToFileURL(path.join(here, '..', 'index.html')).href;
+const PAGE = process.env.READER_URL || pathToFileURL(path.join(here, '..', 'index.html')).href;
 const OUT = path.join(here, 'out');
 const CHROME = [process.env.CHROME,
   'C:/Program Files/Google/Chrome/Application/chrome.exe',

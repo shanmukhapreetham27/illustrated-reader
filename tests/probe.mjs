@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const PAGE = pathToFileURL(path.join(here, '..', 'index.html')).href;
+const PAGE = process.env.READER_URL || pathToFileURL(path.join(here, '..', 'index.html')).href;
 const CHROME = [process.env.CHROME, 'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', '/usr/bin/google-chrome'].find(p => p && fs.existsSync(p));
 const [w, h, fs_, expr] = process.argv.slice(2);
