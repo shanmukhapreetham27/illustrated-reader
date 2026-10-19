@@ -121,16 +121,9 @@ button { font: inherit; color: inherit; }
 .endmark p { margin: .3em 0; }
 
 /* ---------- pictures */
-.fig { margin: 0; padding: 10px 0 4px; box-sizing: border-box; display: flex; flex-direction: column; break-inside: avoid; text-indent: 0; }
+.fig { margin: 0; padding: 10px 0; box-sizing: border-box; display: flex; flex-direction: column; break-inside: avoid; text-indent: 0; }
 .art-wrap { display: flex; justify-content: center; min-height: 0; }
 .art-wrap svg { height: 100%; width: auto; max-width: 100%; display: block; border-radius: 6px; }
-.fig figcaption {
-  height: 24px; display: flex; justify-content: center; align-items: baseline; gap: .55em; white-space: nowrap; overflow: hidden;
-  font: italic 13px/24px var(--serif); color: var(--muted);
-}
-.fig .tag { font: 600 11px/24px var(--ui); font-style: normal; color: var(--muted); letter-spacing: .02em; }
-.fig.grounded .tag { color: var(--accent); }
-.fig.imagined .ttl::after { content: " (imagined)"; }
 
 .art { stroke-linecap: round; stroke-linejoin: round; }
 .art .plate { fill: var(--fig-bg); }

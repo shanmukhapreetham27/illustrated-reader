@@ -10,9 +10,8 @@
   const illusBtn = $('illus'), illusLabel = $('illusLabel'), pageBtn = $('pageno');
   const explainBtn = $('explainBtn'), toastEl = $('toast'), menu = $('menu'), sheet = $('sheet');
 
-  const PARA = {}, FIG = {};
+  const PARA = {};
   D.paragraphs.forEach(p => { PARA[p.id] = p; });
-  D.figures.forEach(f => { FIG[f.id] = f; });
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const store = {
     get(k) { try { return localStorage.getItem('mi.' + k); } catch (e) { return null; } },
@@ -100,23 +99,22 @@
   // -------------------------------------------------------------- pictures
   const svgCache = {};
   const svgFor = f => svgCache[f.id] || (svgCache[f.id] = Art.render(f));
-  const CAP = 24, PAD = 14;
+  const PAD = 20;
 
   function makeFigure(f, h) {
     const el = document.createElement('figure');
-    el.className = 'fig' + (f.imagined ? ' imagined' : '');
+    el.className = 'fig';
     el.dataset.f = f.id;
     el.style.height = h + 'px';
-    el.innerHTML = `<div class="art-wrap" style="height:${h - CAP - PAD}px">${svgFor(f)}</div>` +
-      `<figcaption><span class="ttl">${esc(f.title)}</span><span class="tag">¶${PARA[f.p].n}</span></figcaption>`;
+    el.innerHTML = `<div class="art-wrap" style="height:${h - PAD}px">${svgFor(f)}</div>`;
     return el;
   }
   function figureHeights() {
-    const natural = Math.floor(S.W * 320 / 480) + CAP + PAD;
+    const natural = Math.floor(S.W * 320 / 480) + PAD;
     const cap = Math.floor(S.H * (S.H > S.W * 1.15 ? 0.42 : 0.62));
     const max = Math.min(natural, cap);
     // Smallest size still leaves a drawing at least 120px tall.
-    return { max, min: Math.max(120 + CAP + PAD, Math.floor(max * 0.5)) };
+    return { max, min: Math.max(120 + PAD, Math.floor(max * 0.5)) };
   }
 
   // Pictures always come after the text they show. tryPlace puts one at a candidate spot
@@ -362,14 +360,13 @@
     const marks = flow.querySelectorAll(`.ph[data-f="${fid}"]`);
     let here = 0;
     marks.forEach(m => { m.classList.add('on'); if (pagesOf(m, o).includes(pg)) here++; });
-    fe.querySelector('.tag').textContent = here === marks.length
-      ? `${marks.length} details, numbered in the text`
-      : `${here} of ${marks.length} details on this page`;
+    // Only worth saying when some numbered words are off this page.
+    if (here < marks.length) toast(`${here} of ${marks.length} numbered details are on this page; the rest are on the page before.`);
   }
   function clearGround() {
     if (!S.grounded) return;
     const fe = figEl(S.grounded);
-    if (fe) { fe.classList.remove('grounded'); fe.querySelector('.tag').textContent = `¶${PARA[FIG[S.grounded].p].n}`; }
+    if (fe) fe.classList.remove('grounded');
     flow.querySelectorAll('.ph.on').forEach(m => m.classList.remove('on'));
     S.grounded = null;
   }
@@ -567,7 +564,7 @@
       if (!aligned && !nextPage) rep.problems.push(`${f.id} is not on (or right after) the page of its anchor phrase`);
       if (!whole) rep.problems.push(`${f.id} is cut by a page edge`);
       if (svg.width < 40 || svg.height < 40) rep.problems.push(`${f.id} drawing is too small`);
-      figRects.push([f.id, svg], [f.id, fe.querySelector('figcaption').getBoundingClientRect()]);
+      figRects.push([f.id, svg]);
     }
     for (const s of flow.querySelectorAll('.s')) {
       for (const r of s.getClientRects()) {
