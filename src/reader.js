@@ -62,11 +62,9 @@
   const titlePage = () => `<section class="titlepage" style="height:${S.H}px">${DOOR}` +
     `<div class="bk">${esc(D.meta.title)}</div><div class="au">${esc(D.meta.author)}</div>` +
     `<div class="tr">translated by ${esc(D.meta.translator)}</div>` +
-    `<div class="part">Part ${esc(D.meta.part)}</div>` +
-    '<p class="how">Swipe or tap the right edge to start reading. Tap <b>Illustrate</b> to picture every page. ' +
-    'Tap a paragraph to explain it.</p></section>';
-  const ENDING = `<div class="endmark"><p>End of the excerpt (${esc(D.meta.excerpt)}).</p>` +
-    '<p>Tap Illustrate to picture every page. Tap the top of the page for the menu: text size, night mode, How it works, Credits.</p></div>';
+    `<div class="part">Part ${esc(D.meta.part)}</div></section>`;
+  // A short rule marks the end of the excerpt, like the end of a chapter.
+  const ENDING = '<div class="endmark" aria-hidden="true"></div>';
 
   function renderBase() {
     flow.innerHTML = titlePage();
@@ -405,10 +403,15 @@
     });
     const good = checks.filter(c => c.ok).length;
     openSheet('How it works', `
+      <section><h3>Controls</h3><ul>
+        <li>Swipe, or tap the left or right edge, to turn pages.</li>
+        <li><b>Illustrate</b> pictures every page; tap it again to hide the pictures. Tap a picture to see the words it is drawn from.</li>
+        <li>Tap a paragraph, then <b>Explain</b>.</li>
+      </ul></section>
       <section><h3>When you tap Illustrate</h3><ol>
         <li><b>Read.</b> The app looks up the scene specs for the whole excerpt and, on the page you are on, highlights the words each picture is drawn from.</li>
         <li><b>Draw.</b> A small SVG engine in this page draws each spec. No image model runs while you read.</li>
-        <li><b>Place.</b> A layout pass puts every picture on the same page as the sentence it shows, and redoes it whenever the screen or text size changes.</li>
+        <li><b>Place.</b> A layout pass puts every picture right after the text it shows, on the same page whenever there is room, and redoes it whenever the screen or text size changes.</li>
       </ol></section>
       <section><h3>Left without pictures</h3><ul>${Object.values(D.skips).map(r => `<li>${refs(r)}</li>`).join('')}</ul></section>
       <section><h3>Where the AI comes in</h3>
